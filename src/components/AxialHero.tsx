@@ -50,9 +50,9 @@ export default function AxialHero() {
             <div className="mt-7 md:mt-8">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center bg-[#F5C84B] hover:bg-[#FFD76B] text-black font-black text-[13px] md:text-[14px] tracking-[0.06em] uppercase px-7 md:px-8 py-3.5 md:py-4 rounded-none transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+                className="inline-flex items-center justify-center bg-[#F5C84B] hover:bg-[#FFD76B] text-black font-black text-[13px] md:text-[14px] tracking-[0.08em] uppercase px-7 md:px-8 py-3.5 md:py-4 rounded-none transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
               >
-                Consult Now
+                CONSULT NOW
               </Link>
             </div>
           </div>
