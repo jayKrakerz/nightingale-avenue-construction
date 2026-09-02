@@ -125,9 +125,9 @@ export default function AxialHero() {
                     Details <span aria-hidden>→</span>
                   </Link>
                 </div>
-                <div className="w-[112px] sm:w-[118px] shrink-0 relative overflow-hidden rounded-sm hidden xs:block">
+                <div className="w-[112px] sm:w-[118px] shrink-0 relative overflow-hidden rounded-sm block">
                   <div className="absolute inset-0 rotate-[2deg] scale-[1.08] origin-center">
-                    <Image src="/building.webp" alt="" fill className="object-cover" sizes="120px" />
+                    <Image src="/building.webp" alt="Residential House preview" fill className="object-cover" sizes="120px" priority={false} />
                   </div>
                 </div>
               </div>
