@@ -15,10 +15,10 @@ export default function StatsSection() {
           {STATS.map((stat, i) => (
             <motion.div
               key={stat.label}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 14 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: i * 0.08 }}
+              transition={{ duration: 0.45, delay: i * 0.08 }}
               className="text-center py-8 md:py-2 px-6"
             >
               <div className="font-serif font-light text-[36px] md:text-[44px] leading-none tracking-tight text-white mb-2">

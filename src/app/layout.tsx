@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Cormorant_Garamond } from "next/font/google";
+import { Inter, Cormorant_Garamond, Archivo } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -15,6 +15,13 @@ const cormorant = Cormorant_Garamond({
   variable: "--font-cormorant",
   subsets: ["latin"],
   weight: ["300", "500"],
+  display: "swap",
+});
+
+const archivo = Archivo({
+  variable: "--font-archivo",
+  subsets: ["latin"],
+  weight: ["600", "700", "800"],
   display: "swap",
 });
 
@@ -56,7 +63,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${cormorant.variable} scroll-smooth`}>
+    <html lang="en" className={`${inter.variable} ${cormorant.variable} ${archivo.variable} scroll-smooth`}>
       <body className="min-h-screen flex flex-col font-sans antialiased bg-cream">
         <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 z-[100] bg-charcoal text-white px-4 py-2 rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-gold">
           Skip to content

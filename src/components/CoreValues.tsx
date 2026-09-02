@@ -31,7 +31,7 @@ export default function CoreValues({ showTitle = true }: CoreValuesProps) {
           {CORE_VALUES.map((value, i) => (
             <motion.div
               key={value.title}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 14 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.08 }}

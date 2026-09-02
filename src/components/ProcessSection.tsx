@@ -23,10 +23,10 @@ export default function ProcessSection() {
             return (
               <motion.div
                 key={step.number}
-                initial={{ opacity: 0, y: 28 }}
+                initial={{ opacity: 0, y: 14 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
-                transition={{ duration: 0.6, delay: i * 0.06 }}
+                transition={{ duration: 0.45, delay: i * 0.06 }}
                 className="relative bg-cream rounded-[20px] p-7 md:p-8 border border-charcoal/5 overflow-hidden group hover:bg-white hover:border-gold/15 transition-all duration-500"
               >
                 <span className="absolute -top-1 -right-2 font-serif text-[64px] font-light leading-none text-charcoal/[0.04] group-hover:text-gold/[0.07] transition-colors">

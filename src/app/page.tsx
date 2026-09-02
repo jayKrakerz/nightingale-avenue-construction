@@ -39,7 +39,7 @@ export default function Home() {
         <div className="absolute top-0 inset-x-0 h-px bg-charcoal/5" />
         <div className="max-w-[1440px] mx-auto">
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="lg:col-span-7">
+            <motion.div initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.45, ease: "easeOut" }} className="lg:col-span-7">
               <div className="inline-flex items-center gap-2 text-gold-dark text-[11px] tracking-[0.22em] uppercase font-semibold mb-4">
                 <span className="w-6 h-px bg-gold-dark/30" /> About Nightingale Avenue Construction
               </div>
@@ -66,7 +66,7 @@ export default function Home() {
               </div>
             </motion.div>
 
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.08 }} className="lg:col-span-5">
+            <motion.div initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.45, ease: "easeOut", delay: 0.08 }} className="lg:col-span-5">
               <div className="bg-white rounded-[28px] border border-charcoal/5 p-6 shadow-soft">
                 <div className="aspect-[4/3] rounded-2xl overflow-hidden relative bg-charcoal">
                   <Image src="/images/about-community.jpg" alt="Nightingale Avenue Construction community aerial view" fill className="object-cover opacity-90" sizes="(max-width: 1024px) 100vw, 520px" />

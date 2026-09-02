@@ -20,10 +20,10 @@ const CATEGORY_STYLE: Record<string, string> = {
 export default function ProjectCard({ project, index }: ProjectCardProps) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 32 }}
+      initial={{ opacity: 0, y: 14 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
-      transition={{ duration: 0.6, delay: index * 0.07, ease: [0.25, 0.1, 0.25, 1] }}
+      transition={{ duration: 0.45, delay: index * 0.05, ease: "easeOut" }}
       className="group relative bg-white rounded-[24px] overflow-hidden border border-charcoal/5 card-premium flex flex-col"
     >
       <div className="relative aspect-[4/3] overflow-hidden bg-cream">
