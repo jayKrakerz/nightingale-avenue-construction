@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import {
@@ -23,133 +23,13 @@ import CTASection from "@/components/CTASection";
 import ContactForm from "@/components/ContactForm";
 import { TrustMarquee } from "@/components/Marquee";
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
+import AxialHero from "@/components/AxialHero";
 import { SERVICES, PROJECTS, COMPANY } from "@/lib/data";
-import { useRef } from "react";
 
 export default function Home() {
-  const heroRef = useRef<HTMLElement>(null);
-  const { scrollYProgress } = useScroll({ target: heroRef, offset: ["start start", "end start"] });
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "18%"]);
-  const opacity = useTransform(scrollYProgress, [0, 0.85], [1, 0]);
-
   return (
     <>
-      {/* Single-image Hero — mobile optimized */}
-      <section ref={heroRef} className="relative min-h-[82vh] sm:min-h-[78vh] md:min-h-[92vh] flex items-center overflow-hidden bg-charcoal-dark">
-        <motion.div style={{ y }} className="absolute inset-0 will-change-transform">
-          <Image
-            src="/images/hero-housing.jpg"
-            alt="Contemporary housing by Nightingale Avenue Construction in Accra"
-            fill
-            className="object-cover"
-            priority
-            sizes="100vw"
-          />
-        </motion.div>
-        <div className="absolute inset-0 bg-charcoal-dark/60 md:bg-charcoal-dark/55" />
-        <div className="absolute inset-0 hero-gradient" />
-        <motion.div style={{ opacity }} className="absolute inset-0 opacity-[0.04] pointer-events-none hidden sm:block">
-          <div className="w-full h-full" style={{ backgroundImage: `linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)`, backgroundSize: "80px 80px" }} />
-        </motion.div>
-
-        <div className="relative z-20 w-full max-w-[1440px] mx-auto px-5 sm:px-6 lg:px-8 pt-24 sm:pt-28 pb-8 md:pb-12">
-          <div className="grid lg:grid-cols-12 gap-8 items-center">
-            <div className="lg:col-span-7">
-              <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-                <span className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/15 text-white text-[11px] font-semibold tracking-[0.18em] uppercase px-4 py-2 rounded-full mb-6 md:mb-7">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" aria-hidden /> Est. Jan 2024 • Wholly Ghanaian Owned • PPA Registered
-                </span>
-              </motion.div>
-
-              <motion.h1
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, delay: 0.06 }}
-                className="font-serif font-light text-[32px] xs:text-[34px] sm:text-[38px] md:text-[56px] lg:text-[68px] leading-[0.9] tracking-[-0.02em] text-white"
-              >
-                Quality Housing
-                <span className="block font-light italic text-gold">for All.</span>
-                <span className="block text-[26px] sm:text-[30px] md:text-[44px] lg:text-[52px] font-light opacity-90">Solutions for Ghana.</span>
-              </motion.h1>
-
-              <motion.p
-                initial={{ opacity: 0, y: 12 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, delay: 0.14 }}
-                className="mt-4 sm:mt-5 md:mt-6 text-white/70 text-[14px] sm:text-[15px] md:text-[17px] leading-relaxed max-w-xl font-light"
-              >
-                {COMPANY.tagline}. PPA-registered, SSNIT & tax compliant — affordable housing, glass & logistics across Ghana.
-              </motion.p>
-
-              <motion.div
-                initial={{ opacity: 0, y: 12 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, delay: 0.22 }}
-                className="flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-3 mt-7 sm:mt-8"
-              >
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center justify-center gap-2 bg-gold hover:bg-gold-light text-charcoal-dark px-6 sm:px-7 py-3.5 sm:py-4 rounded-full text-sm font-semibold transition-all hover:shadow-gold hover:gap-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-charcoal-dark w-full sm:w-auto"
-                >
-                  Request a Consultation <ArrowRight size={16} aria-hidden />
-                </Link>
-                <Link
-                  href="/projects"
-                  className="inline-flex items-center justify-center gap-1.5 text-white/90 hover:text-white text-sm font-medium tracking-wide px-2 py-3 sm:py-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40 rounded-full w-full sm:w-auto border border-white/15 sm:border-0 bg-white/5 sm:bg-transparent"
-                >
-                  View Our Projects <ArrowRight size={14} aria-hidden className="opacity-60" />
-                </Link>
-              </motion.div>
-            </div>
-
-            {/* Featured card — now visible on tablet+ with compact mobile fallback */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              className="lg:col-span-5 relative hidden md:block"
-            >
-              <div className="ml-auto max-w-[420px] rounded-[28px] bg-white p-6 shadow-premium-lg border border-white/50">
-                <div className="flex items-center justify-between mb-5">
-                  <span className="text-[11px] tracking-[0.2em] uppercase font-semibold text-charcoal/40">Featured • Accra</span>
-                  <span className="w-8 h-8 rounded-full bg-gold/10 flex items-center justify-center text-gold"><Sparkles size={14} aria-hidden /></span>
-                </div>
-                <div className="aspect-[16/10] rounded-2xl overflow-hidden bg-cream relative mb-5 border border-charcoal/5">
-                  <Image src="/images/featured-estate.jpg" alt="500-unit estate sustainable community" fill className="object-cover" sizes="(max-width: 1024px) 50vw, 420px" />
-                  <div className="absolute bottom-3 left-3 bg-charcoal text-white text-xs font-semibold px-3 py-1.5 rounded-full">500 Units • Design & Build</div>
-                </div>
-                <h3 className="font-serif text-xl font-medium text-charcoal leading-tight">Affordable Housing — Sustainable Community Model</h3>
-                <p className="text-sm text-charcoal/60 mt-2 leading-relaxed">Contemporary, culturally-tailored with parks, playgrounds and renewable integration.</p>
-                <div className="grid grid-cols-3 gap-3 mt-5 pt-5 border-t border-charcoal/5">
-                  {[
-                    { k: "500+", v: "Units" },
-                    { k: "Kumasi", v: "Green model" },
-                    { k: "PPA", v: "Certified" },
-                  ].map((s) => (
-                    <div key={s.k} className="text-center">
-                      <div className="font-serif font-medium text-charcoal">{s.k}</div>
-                      <div className="text-xs text-charcoal/45">{s.v}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              <div className="absolute -z-10 -bottom-6 -right-6 w-64 h-64 bg-gold/15 rounded-full blur-3xl" aria-hidden />
-            </motion.div>
-          </div>
-
-          {/* Mobile featured strip */}
-          <div className="md:hidden mt-6 flex gap-3 overflow-x-auto snap-x snap-mandatory scrollbar-none -mx-5 px-5 pb-2">
-            <div className="snap-start shrink-0 bg-white rounded-2xl p-4 flex items-center gap-3 border border-white/20 min-w-[260px] max-w-[80vw]">
-              <span className="w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center text-gold shrink-0"><Award size={16} /></span>
-              <div className="min-w-0"><p className="text-xs font-semibold text-charcoal leading-tight">PPA Registered</p><p className="text-xs text-charcoal/50">Government tenders</p></div>
-            </div>
-            <div className="snap-start shrink-0 bg-white rounded-2xl p-4 flex items-center gap-3 border border-white/20 min-w-[260px] max-w-[80vw]">
-              <span className="w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center text-gold shrink-0"><ShieldCheck size={16} /></span>
-              <div className="min-w-0"><p className="text-xs font-semibold text-charcoal leading-tight">500+ Units</p><p className="text-xs text-charcoal/50">Accra blueprint</p></div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <AxialHero />
 
       {/* Single subtle marquee only */}
       <TrustMarquee />
