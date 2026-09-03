@@ -12,7 +12,7 @@ export default function Navbar() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const { scrollY } = useScroll();
+  const { scrollY, scrollYProgress } = useScroll();
   const headerBg = useTransform(scrollY, [0, 80], ["rgba(255,255,255,0)", "rgba(255,255,255,0.86)"]);
   const headerBlur = useTransform(scrollY, [0, 80], ["blur(0px)", "blur(16px)"]);
   const headerShadow = useTransform(scrollY, [0, 80], ["0 0 0 rgba(0,0,0,0)", "0 8px 32px rgba(0,0,0,0.06)"]);
@@ -47,9 +47,12 @@ export default function Navbar() {
     setIsOpen(false);
   }, [pathname]);
 
+  const progressScale = useTransform(scrollYProgress, [0, 1], [0, 1]);
+
   return (
     <>
-      <div className="fixed top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/25 to-transparent z-[61] pointer-events-none" />
+      <motion.div className="fixed top-0 left-0 right-0 h-px bg-gold z-[62] origin-left pointer-events-none" style={{ scaleX: progressScale }} />
+      <div className="fixed top-px left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent z-[61] pointer-events-none" />
       <motion.header
         style={{ backgroundColor: headerBg as unknown as string, backdropFilter: headerBlur as unknown as string, WebkitBackdropFilter: headerBlur as unknown as string, boxShadow: headerShadow as unknown as string } as unknown as React.CSSProperties}
         className={`fixed top-0 left-0 right-0 z-50 border-b transition-all duration-300 ${scrolled ? "border-charcoal/5 py-3" : "border-transparent py-5"}`}

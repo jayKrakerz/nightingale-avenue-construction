@@ -8,7 +8,6 @@ import { DotGrid, BlueprintCorner } from "./SectionTexture";
 export default function ProcessSection() {
   return (
     <section className="section-padding bg-white relative overflow-hidden">
-      <DotGrid opacity={0.025} />
       <BlueprintCorner className="top-8 -left-24 hidden xl:block opacity-60" />
       <div className="absolute top-0 inset-x-0 h-px bg-charcoal/5" />
       <div className="relative max-w-[1440px] mx-auto">
@@ -36,7 +35,7 @@ export default function ProcessSection() {
                 <span className="absolute -top-1 -right-1 font-archivo font-extrabold text-[48px] leading-none text-charcoal/[0.04]">{step.number}</span>
                 <div className="relative">
                   <div className="w-10 h-10 rounded-[4px] bg-charcoal flex items-center justify-center text-white mb-4">
-                    <Icon size={16} strokeWidth={1.8} />
+                    <Icon size={16} strokeWidth={1.4} />
                   </div>
                   <h3 className="font-serif font-medium text-[15px] text-charcoal mb-1.5">{step.title}</h3>
                   <p className="text-[13px] leading-relaxed text-charcoal/70">{step.description}</p>

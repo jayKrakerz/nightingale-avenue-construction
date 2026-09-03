@@ -7,7 +7,7 @@ export default function Footer() {
   return (
     <footer className="bg-charcoal-dark text-white/70 relative overflow-hidden">
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
-      <div className="absolute -top-32 -right-32 w-96 h-96 bg-gold/5 rounded-full blur-3xl" />
+      <div className="absolute -top-32 -right-32 w-64 h-64 bg-gold/5 rounded-full blur-2xl" />
 
       <div className="max-w-[1440px] mx-auto px-6 lg:px-8 pt-14 pb-8">
         {/* Top */}
@@ -65,7 +65,7 @@ export default function Footer() {
                 { Icon: Instagram, label: "Instagram" },
                 { Icon: Linkedin, label: "LinkedIn" },
               ].map(({ Icon, label }) => (
-                <a key={label} href="#" aria-label={label} className="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/70 hover:bg-gold hover:text-charcoal hover:border-gold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold">
+                <a key={label} href="#" aria-label={label} className="w-8 h-8 rounded-[4px] bg-white/5 border border-white/10 flex items-center justify-center text-white/70 hover:bg-gold hover:text-charcoal hover:border-gold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold">
                   <Icon size={14} aria-hidden />
                 </a>
               ))}

@@ -41,8 +41,8 @@ export default function Home() {
         {/* technical rule, not dotgrid */}
         <div className="absolute inset-0 pointer-events-none opacity-[0.03]" aria-hidden style={{ backgroundImage: "linear-gradient(rgba(28,33,40,0.8) 1px, transparent 1px)", backgroundSize: "100% 32px" }} />
         <div className="relative max-w-[1440px] mx-auto">
-          <div className="grid lg:grid-cols-12 gap-8 lg:gap-10 items-start">
-            <motion.div initial={{ opacity: 0, y: 8 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-60px" }} transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }} className="lg:col-span-7">
+          <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+            <motion.div initial={{ opacity: 0, y: 8 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-60px" }} transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }} className="lg:col-span-8">
               <div className="flex items-center gap-3 mb-4">
                 <span className="w-10 h-px bg-gold" aria-hidden />
                 <span className="font-archivo font-bold text-charcoal text-[11px] tracking-[0.12em] uppercase">About Nightingale Avenue Construction</span>
@@ -72,7 +72,7 @@ export default function Home() {
               </div>
             </motion.div>
 
-            <motion.div initial={{ opacity: 0, y: 8 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-60px" }} transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1], delay: 0.06 }} className="lg:col-span-5">
+            <motion.div initial={{ opacity: 0, y: 8 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-60px" }} transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1], delay: 0.06 }} className="lg:col-span-4 lg:sticky lg:top-24">
               <div className="bg-white rounded-[6px] border border-charcoal/10 p-3 shadow-sm">
                 <div className="aspect-[4/3] rounded-[4px] overflow-hidden relative bg-charcoal">
                   <Image src="/images/about-community.jpg" alt="Nightingale Avenue Construction community aerial view" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 520px" />

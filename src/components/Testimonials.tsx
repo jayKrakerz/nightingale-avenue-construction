@@ -9,7 +9,6 @@ import { DotGrid, WaveLines } from "./SectionTexture";
 export default function Testimonials() {
   return (
     <section className="section-padding bg-cream relative overflow-hidden">
-      <DotGrid opacity={0.03} />
       <WaveLines opacity={0.04} />
       <div className="absolute top-10 right-10 opacity-[0.04] hidden lg:block" aria-hidden>
         <Quote size={160} className="text-charcoal" />

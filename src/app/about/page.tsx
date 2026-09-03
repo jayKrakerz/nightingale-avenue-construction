@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, ArrowUpRight, Quote, CheckCircle2 } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Quote, Building2, ShieldCheck, CheckCircle2 } from "lucide-react";
 import { COMPANY, TEAM_MEMBERS } from "@/lib/data";
 
 const TIMELINE = [
@@ -37,9 +37,24 @@ export default function AboutPage() {
               Housing <span className="italic font-normal text-gold">for people</span> <br /> who keep Ghana running.
             </h1>
             <p className="mt-4 text-white/70 text-[14px] md:text-[15px] leading-[1.6] max-w-xl font-medium">Incorporated January 2024. For nurses, doctors, teachers and security personnel — contemporary streets with parks and renewables, cost-controlled and Ghanaian-led.</p>
-            <div className="mt-6 flex flex-wrap gap-2">
-              <span className="bg-white text-charcoal text-[11px] font-bold tracking-wide uppercase px-3 py-1.5 rounded-[4px]">500 Units Blueprint</span>
-              <span className="bg-white/10 text-white border border-white/15 text-[11px] font-bold tracking-wide uppercase px-3 py-1.5 rounded-[4px]">100% Ghanaian • Jan 2024</span>
+            <div className="mt-6 flex flex-wrap gap-3">
+              <div className="bg-white rounded-[4px] border border-white/10 p-2 pr-3 flex gap-2.5 items-center">
+                <span className="w-8 h-8 rounded-[4px] bg-cream border border-charcoal/10 flex items-center justify-center text-gold shrink-0"><ShieldCheck size={14} /></span>
+                <div>
+                  <div className="text-charcoal text-[11px] font-bold leading-none">PPA Registered • 2024</div>
+                  <div className="text-charcoal/50 text-[10px] leading-none mt-1">Tax 915 • SSNIT 766 — Jan 2024</div>
+                </div>
+                <div className="ml-2 w-8 h-8 rounded-[4px] overflow-hidden bg-cream border border-charcoal/10 relative shrink-0 hidden sm:block">
+                  <Image src="/images/procurement.jpg" alt="Certificate" fill className="object-cover" sizes="32px" />
+                </div>
+              </div>
+              <div className="bg-white/10 backdrop-blur border border-white/15 rounded-[4px] p-2 pr-3 flex gap-2.5 items-center">
+                <span className="w-8 h-8 rounded-[4px] bg-gold flex items-center justify-center text-charcoal shrink-0"><Building2 size={14} /></span>
+                <div>
+                  <div className="text-white text-[11px] font-bold leading-none">500 Units — Accra</div>
+                  <div className="text-white/50 text-[10px] leading-none mt-1">Blueprint • Abelemkpe GA 135 6916</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -71,10 +86,10 @@ export default function AboutPage() {
                 <span className="font-serif text-[48px] leading-none float-left mr-2 mt-1 text-gold">N</span>
                 ightingale Avenue Construction is recognised for real estate and civil engineering. Incorporated January 2024, we focus on affordable housing for middle-income and essential workers — while solving Ghana&apos;s structural housing deficit.
               </p>
-              <p className="text-charcoal/65 text-[14px] leading-[1.75] mt-4">
+              <p className="text-charcoal/70 text-[15px] leading-[1.75] mt-4">
                 Leadership from site: HND Building Technology, BSc Construction Engineering, MSc Project Management. We deliver contemporary communities with premium amenities — parks, playgrounds — without exceeding budget. Culturally tailored, inclusive, and built to last.
               </p>
-              <p className="text-charcoal/65 text-[14px] leading-[1.75] mt-4">
+              <p className="text-charcoal/70 text-[15px] leading-[1.75] mt-4">
                 We are a solutions provider in construction, frameless & aluminium glass, procurement & logistics (PPA-registered), renewable energy and IT — from sourcing to handover.
               </p>
             </div>
@@ -87,19 +102,45 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* PRINCIPLES — 2 large editorial, not 4 equal */}
+      {/* PRINCIPLES — 8/4 editorial with proof, not 7/5 equal cards */}
       <section className="bg-cream border-y border-charcoal/5">
         <div className="max-w-[1440px] mx-auto px-6 lg:px-8 py-12 md:py-16">
-          <div className="grid md:grid-cols-12 gap-6">
-            <div className="md:col-span-7 bg-white border border-charcoal/10 p-8">
-              <div className="text-[11px] font-bold tracking-[0.14em] uppercase text-gold">Mission</div>
-              <h3 className="mt-1 font-serif font-light text-charcoal text-[24px] leading-[1] tracking-tight">Housing that workers can own.</h3>
-              <p className="mt-3 text-charcoal/60 text-[14px] leading-relaxed">For nurses, doctors, teachers, security — sustainable, contemporary communities at controlled cost.</p>
+          <div className="grid lg:grid-cols-12 gap-6">
+            {/* Mission — 8col, left gold rule, watermark 01 */}
+            <div className="lg:col-span-8 bg-white border border-charcoal/10 p-8 md:p-10 relative overflow-hidden">
+              <span className="absolute -top-2 -left-1 font-archivo font-extrabold text-[72px] leading-none text-gold/[0.06] select-none" aria-hidden>
+                01
+              </span>
+              <div className="absolute left-0 top-8 bottom-8 w-1 bg-gold" aria-hidden />
+              <div className="relative pl-4">
+                <div className="text-[11px] font-bold tracking-[0.14em] uppercase text-gold">Mission — What we do</div>
+                <h3 className="mt-1 font-serif font-light text-charcoal text-[26px] md:text-[30px] leading-[0.95] tracking-tight">Housing that workers <span className="italic font-normal text-gold">can own.</span></h3>
+                <p className="mt-3 text-charcoal/65 text-[14px] leading-[1.7] max-w-[560px]">For nurses, doctors, teachers, security — sustainable, contemporary communities at controlled cost. Social blueprint, not slogan.</p>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  <span className="bg-cream border border-charcoal/10 text-charcoal text-[11px] font-bold uppercase tracking-wide px-3 py-1.5 rounded-[4px]">500 Units • Accra</span>
+                  <span className="bg-cream border border-charcoal/10 text-charcoal text-[11px] font-bold uppercase tracking-wide px-3 py-1.5 rounded-[4px]">Parks & Renewables</span>
+                  <span className="bg-charcoal text-white text-[11px] font-bold uppercase tracking-wide px-3 py-1.5 rounded-[4px]">Cost-Controlled</span>
+                </div>
+                <p className="mt-4 text-[12px] leading-relaxed text-charcoal/50 border-l-2 border-gold/30 pl-3 italic">“We pour streets, fix drains, hang glass — and hand keys to the people who keep Ghana running.” — JAK, MD</p>
+              </div>
             </div>
-            <div className="md:col-span-5 bg-charcoal p-8 text-white">
-              <div className="text-[11px] font-bold tracking-[0.14em] uppercase text-gold">Vision</div>
-              <h3 className="mt-1 font-serif font-light text-[24px] leading-[1] tracking-tight">Streets that work.</h3>
-              <p className="mt-3 text-white/60 text-[14px] leading-relaxed">Not estates on paper — equity, ownership, and future you can walk.</p>
+            {/* Vision — 4col, image-backed, compact */}
+            <div className="lg:col-span-4 bg-charcoal relative overflow-hidden p-8 flex flex-col">
+              <div className="absolute inset-0 opacity-[0.14]">
+                <Image src="/images/glass-frameless.jpg" alt="" fill className="object-cover" sizes="400px" />
+              </div>
+              <div className="absolute inset-0 bg-charcoal/70" aria-hidden />
+              <span className="absolute -top-1 -right-1 font-archivo font-extrabold text-[64px] leading-none text-white/[0.06] select-none" aria-hidden>
+                02
+              </span>
+              <div className="relative">
+                <div className="text-[11px] font-bold tracking-[0.14em] uppercase text-gold">Vision — Where we go</div>
+                <h3 className="mt-1 font-serif font-light text-white text-[24px] leading-[1] tracking-tight">Streets <span className="italic font-normal text-gold">that work.</span></h3>
+                <p className="mt-3 text-white/65 text-[13px] leading-relaxed">Not estates on paper — equity, ownership, and future you can walk. Ghanaian streets, shade, play.</p>
+                <div className="mt-6 flex items-center gap-2 text-white/50 text-[11px] font-medium">
+                  <span className="w-6 h-px bg-gold/50" aria-hidden /> Abelemkpe • Kumasi • Nationwide
+                </div>
+              </div>
             </div>
           </div>
         </div>

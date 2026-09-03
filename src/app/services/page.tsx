@@ -49,7 +49,7 @@ export default function ServicesPage() {
             <div className="relative max-w-[1440px] mx-auto">
               <div className={`grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center ${!isEven ? "lg:grid-flow-dense" : ""}`}>
                 <motion.div initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-60px" }} transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }} className={!isEven ? "lg:col-start-2" : ""}>
-                  <div className="w-11 h-11 rounded-xl bg-gold/10 flex items-center justify-center mb-5 text-gold"><Icon size={20} strokeWidth={1.7} aria-hidden /></div>
+                  <div className="w-11 h-11 rounded-xl bg-gold/10 flex items-center justify-center mb-5 text-gold"><Icon size={20} strokeWidth={1.4} aria-hidden /></div>
                   <h2 className="font-serif font-light text-[28px] md:text-[34px] leading-[0.95] tracking-tight text-charcoal">{service.title}</h2>
                   <p className="mt-4 text-charcoal/70 text-[15px] leading-relaxed">{service.description}</p>
                   <ul className="space-y-2.5 mt-6 mb-8">

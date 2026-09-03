@@ -43,13 +43,13 @@ export default function AxialHero() {
       <div className="absolute inset-0 z-[1] bg-gradient-to-t from-charcoal via-charcoal/60 to-transparent pointer-events-none md:hidden" aria-hidden />
 
       <div className="relative z-10 max-w-[1440px] mx-auto px-6 lg:px-8">
-        <motion.div style={{ y: contentY, opacity: contentOpacity }} className="pt-[104px] sm:pt-[120px] md:pt-[168px] lg:pt-[192px] xl:pt-[216px] pb-[64px] md:pb-[72px] flex flex-col lg:flex-row lg:justify-between gap-10 lg:gap-8">
-          {/* Header — hard type */}
+        <motion.div style={{ y: contentY, opacity: contentOpacity }} className="pt-[104px] sm:pt-[120px] md:pt-[168px] lg:pt-[192px] xl:pt-[216px] pb-[64px] md:pb-[72px] grid lg:grid-cols-12 gap-8 items-start">
+          {/* Header — 8col */}
           <motion.div
             initial="hidden"
             animate="visible"
             variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.06, delayChildren: 0.04 } } }}
-            className="relative max-w-[600px] shrink-0"
+            className="relative lg:col-span-8 max-w-[640px] shrink-0"
           >
             <motion.div variants={{ hidden: { opacity: 0, y: 8 }, visible: { opacity: 1, y: 0, transition: { duration: 0.45, ease: [0.22, 1, 0.36, 1] } } }} className="flex items-center gap-3 mb-6">
               <span className="w-10 h-px bg-gold" aria-hidden />
@@ -83,8 +83,8 @@ export default function AxialHero() {
             </motion.div>
           </motion.div>
 
-          {/* Right — slab card, no float/blur/tilt, 6px radius */}
-          <div className="flex flex-col lg:items-end lg:shrink-0 lg:pt-1 w-full lg:w-auto">
+          {/* Right — 4col offset */}
+          <div className="lg:col-span-4 flex flex-col lg:items-end lg:pt-2 w-full">
             <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1], delay: 0.28 }} className="relative w-full sm:max-w-[380px] lg:w-[380px] self-start lg:self-auto">
               <div className="relative overflow-hidden rounded-[6px] bg-white border border-charcoal/10 p-5 flex gap-4">
                 <div className="absolute top-0 left-0 w-full h-1 bg-gold" aria-hidden />

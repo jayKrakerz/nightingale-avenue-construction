@@ -25,11 +25,10 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
       transition={{ duration: 0.45, delay: index * 0.04, ease: [0.22, 1, 0.36, 1] }}
-      className="group relative bg-white rounded-[6px] overflow-hidden border border-charcoal/10 flex flex-col"
+      className="group relative bg-white rounded-[6px] overflow-hidden border border-charcoal/10 flex flex-col hover:border-charcoal/15 transition-colors"
     >
-      <div className="absolute top-0 left-0 right-0 h-1 bg-gold z-20" aria-hidden />
       <div className="relative aspect-[4/3] overflow-hidden bg-cream">
-        <Image src={project.image} alt={project.title} fill className="object-cover grayscale-[0.06] group-hover:scale-[1.02] transition-transform duration-500" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 420px" />
+        <Image src={project.image} alt={project.title} fill className="object-cover grayscale-[0.06] group-hover:grayscale-0 group-hover:scale-[1.02] transition-all duration-500" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 420px" />
         <div className="absolute inset-0 bg-charcoal/5" aria-hidden />
         <div className={`absolute top-3 left-3 z-20 ${CATEGORY_STYLE[project.category] || "bg-charcoal text-white"} px-2.5 py-1 rounded-[4px] text-[10px] font-bold tracking-wide`}>{project.category}</div>
         <div className="absolute top-3 right-3 z-20 w-8 h-8 rounded-[4px] bg-white border border-charcoal/10 flex items-center justify-center text-charcoal opacity-0 group-hover:opacity-100 transition-opacity">
@@ -42,7 +41,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
         <div className="flex items-center gap-1.5 text-charcoal/40 text-[11px] font-semibold tracking-wide mt-1.5">
           <MapPin size={11} className="text-gold" /> {project.location} <span className="mx-1">•</span> {project.completionYear}
         </div>
-        <p className="text-[13px] leading-[1.55] text-charcoal/60 line-clamp-2 mt-2.5 flex-1">{project.description}</p>
+        <p className="text-[14px] leading-[1.65] text-charcoal/70 line-clamp-2 mt-2.5 flex-1">{project.description}</p>
         <div className="h-px bg-charcoal/10 my-3" />
         <div className="flex items-center justify-between">
           <span className="text-[10px] tracking-[0.08em] uppercase font-bold text-charcoal/30 truncate pr-2">{project.client}</span>

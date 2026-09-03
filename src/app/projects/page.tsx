@@ -94,7 +94,6 @@ export default function ProjectsPage() {
 
       {/* Filters & Projects — with textures, light cards */}
       <section className="section-padding bg-white relative overflow-hidden">
-        <DotGrid opacity={0.025} />
         <TopoLines opacity={0.035} />
         <div className="absolute top-0 inset-x-0 h-px bg-charcoal/5" aria-hidden />
         <div className="relative max-w-[1440px] mx-auto">
