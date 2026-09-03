@@ -27,8 +27,8 @@ export default function CTASection() {
             <div className="inline-flex items-center gap-2 text-gold text-[11px] tracking-[0.12em] uppercase font-bold mb-3">
               <Sparkles size={12} aria-hidden /> Start your project
             </div>
-            <h2 className="font-archivo font-extrabold text-[28px] md:text-[32px] leading-[0.9] tracking-[-0.02em] text-white uppercase">
-              Have a project in mind? <span className="text-gold">Let&apos;s build it together.</span>
+            <h2 className="font-serif font-light text-[28px] md:text-[32px] leading-[0.95] tracking-tight text-white">
+              Have a project in mind? <span className="italic font-normal text-gold">Let&apos;s build it together.</span>
             </h2>
             <p className="mt-3 text-white/70 text-[14px] leading-relaxed max-w-xl mx-auto lg:mx-0">From affordable housing to glass façades and nationwide logistics — PPA-registered, Ghanaian-built.</p>
           </div>

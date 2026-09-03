@@ -10,8 +10,13 @@ import { COMPANY } from "@/lib/data";
 export default function ContactPage() {
   return (
     <>
-      {/* Hero — unified */}
+      {/* Hero — with plan on right */}
       <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 bg-charcoal overflow-hidden isolate">
+        <div className="hidden lg:block absolute right-0 bottom-0 w-[620px] opacity-[0.14] pointer-events-none select-none" aria-hidden>
+          <div className="relative w-full aspect-[1.4/1]">
+            <Image src="/plan.webp" alt="" fill className="object-contain grayscale invert brightness-[1.6] contrast-125" sizes="560px" />
+          </div>
+        </div>
         <div className="absolute inset-0 bg-gradient-to-b from-charcoal-light/50 via-charcoal to-charcoal-dark" aria-hidden />
         <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: "linear-gradient(rgba(201,169,106,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(201,169,106,0.5) 1px, transparent 1px)", backgroundSize: "56px 56px" }} aria-hidden />
         <BlueprintCorner className="-top-16 -right-16 hidden lg:block opacity-40" />
@@ -23,8 +28,8 @@ export default function ContactPage() {
               <span className="w-8 h-px bg-gold/60 hidden sm:block" aria-hidden />
               <span className="font-archivo font-semibold text-gold text-[11px] tracking-[0.16em] uppercase">Contact Us</span>
             </div>
-            <h1 className="font-archivo font-extrabold text-[40px] md:text-[52px] lg:text-[60px] leading-[0.88] tracking-[-0.03em] uppercase text-white">
-              LET&apos;S BUILD <span className="text-gold">SOMETHING GREAT</span>
+            <h1 className="font-serif font-light text-[38px] md:text-[50px] lg:text-[56px] leading-[0.9] tracking-tight text-white">
+              Let&apos;s build <span className="italic font-normal text-gold">something great</span>
             </h1>
             <p className="mt-4 text-white/70 text-[14px] md:text-[15px] leading-[1.6] max-w-xl font-medium">Tell us about your project and our team will get in touch within 24 hours.</p>
           </motion.div>

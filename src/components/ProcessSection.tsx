@@ -38,7 +38,7 @@ export default function ProcessSection() {
                   <div className="w-10 h-10 rounded-[4px] bg-charcoal flex items-center justify-center text-white mb-4">
                     <Icon size={16} strokeWidth={1.8} />
                   </div>
-                  <h3 className="font-archivo font-extrabold text-[13px] tracking-[-0.01em] uppercase text-charcoal mb-1.5">{step.title}</h3>
+                  <h3 className="font-serif font-medium text-[15px] text-charcoal mb-1.5">{step.title}</h3>
                   <p className="text-[13px] leading-relaxed text-charcoal/70">{step.description}</p>
                 </div>
               </motion.div>

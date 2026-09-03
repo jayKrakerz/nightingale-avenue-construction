@@ -34,7 +34,7 @@ export default function ServiceCard({ service, index, detailed = false }: Servic
       </div>
 
       <div className="p-6 flex flex-col flex-1">
-        <h3 className="font-archivo font-extrabold text-[15px] leading-tight tracking-[-0.01em] text-charcoal uppercase">{service.title}</h3>
+        <h3 className="font-serif font-medium text-[18px] leading-tight text-charcoal">{service.title}</h3>
         <div className="mt-2 h-px w-8 bg-gold" aria-hidden />
         <p className="text-[13px] leading-[1.6] text-charcoal/60 mt-3 line-clamp-3 min-h-[62px]">{detailed ? service.description : service.shortDescription}</p>
 

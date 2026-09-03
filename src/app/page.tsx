@@ -47,8 +47,8 @@ export default function Home() {
                 <span className="w-10 h-px bg-gold" aria-hidden />
                 <span className="font-archivo font-bold text-charcoal text-[11px] tracking-[0.12em] uppercase">About Nightingale Avenue Construction</span>
               </div>
-              <h2 className="font-archivo font-extrabold text-charcoal leading-[0.88] tracking-[-0.03em] text-[30px] md:text-[40px]">
-                BUILDING GHANA WITH <span className="text-gold">EXCELLENCE & EQUITY.</span>
+              <h2 className="font-serif font-light text-charcoal leading-[0.95] tracking-tight text-[30px] md:text-[40px]">
+                Building Ghana with <span className="italic font-normal text-gold">excellence & equity.</span>
               </h2>
               <div className="mt-4 h-1 w-12 bg-gold" aria-hidden />
               <div className="mt-5 space-y-3.5 text-[14px] leading-[1.65] text-charcoal/70 font-medium max-w-prose">

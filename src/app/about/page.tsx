@@ -1,245 +1,189 @@
 "use client";
 
-import React from "react";
-import { motion } from "framer-motion";
-import { Target, Eye, Calendar, Award, ShieldCheck, Building, Users, HardHat, Ruler, CheckCircle2 } from "lucide-react";
-import SectionHeading from "@/components/SectionHeading";
-import StatsSection from "@/components/StatsSection";
-import CoreValues from "@/components/CoreValues";
-import CTASection from "@/components/CTASection";
-import { COMPANY, TEAM_MEMBERS, CERTIFICATES } from "@/lib/data";
 import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight, ArrowUpRight, Quote, CheckCircle2 } from "lucide-react";
+import { COMPANY, TEAM_MEMBERS } from "@/lib/data";
 
 const TIMELINE = [
-  { year: "JAN 2024", title: "Incorporated", desc: "Wholly owned Ghanaian solutions company — construction, glass, procurement & logistics, renewable energy and IT. No. 5 Nii Lomo Tackie Link, Abelemkpe." },
-  { year: "MAR 2024", title: "Commence Business", desc: "Certificate to Commence Business + PPA registration — cleared to tender for Government." },
-  { year: "MAY 2024", title: "Tax & SSNIT Cleared", desc: "Tax Clearance Act 915 + SSNIT Act 766 — fully compliant for public-sector delivery." },
-  { year: "JUL 2024", title: "500 Units Blueprint", desc: "Accra affordable housing blueprint — targeting nurses, doctors, teachers, security personnel." },
-  { year: "SEP 2024", title: "Kumasi Model", desc: "Sustainable community model — green spaces, premium amenities, renewable integration." },
-  { year: "2024+", title: "Nationwide Rollout", desc: "Design & build + frameless/aluminium glass + technology-driven logistics at scale." },
+  { year: "2024.01", k: "Foundation", t: "Wholly Ghanaian incorporation — No. 5 Nii Lomo Tackie Link, Abelemkpe. Solutions company on paper, site crew on ground.", img: "/images/construction.jpg" },
+  { year: "2024.03", k: "Licensed", t: "Certificate to Commence Business + PPA registration. Cleared to tender for Government.", img: "/images/procurement.jpg" },
+  { year: "2024.05", k: "Compliant", t: "Tax Act 915 & SSNIT Act 766 cleared — trust for public-sector delivery.", img: "/images/about-community.jpg" },
+  { year: "2024.07", k: "Blueprint", t: "500 affordable units — Accra. For nurses, doctors, teachers, security.", img: "/images/featured-estate.jpg" },
+  { year: "2024.09", k: "Kumasi", t: "Sustainable community model — green spaces, renewables, premium amenities.", img: "/images/renewable.jpg" },
+  { year: "2024 →", k: "Nationwide", t: "Design & build + frameless glass + logistics at scale.", img: "/images/glass-frameless.jpg" },
 ];
 
 export default function AboutPage() {
   return (
-    <>
-      {/* Hero — hard slab with site proof strip */}
-      <section className="relative bg-charcoal overflow-hidden isolate">
-        <div className="absolute inset-0 bg-charcoal" aria-hidden />
-        <div className="absolute inset-x-0 top-0 h-px bg-gold/30" aria-hidden />
-        <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "linear-gradient(rgba(201,169,106,0.5) 1px, transparent 1px)", backgroundSize: "100% 32px" }} aria-hidden />
-        <div className="relative max-w-[1440px] mx-auto px-6 lg:px-8 pt-32 pb-0 md:pt-40">
-          <div className="grid lg:grid-cols-12 gap-8 items-end">
-            <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }} className="lg:col-span-7 pb-10 md:pb-12">
-              <div className="flex items-center gap-3 mb-5">
-                <span className="w-10 h-px bg-gold" aria-hidden />
-                <span className="font-archivo font-bold text-gold text-[11px] tracking-[0.14em] uppercase">About Nightingale Avenue Construction</span>
-              </div>
-              <h1 className="font-archivo font-extrabold text-white text-[40px] md:text-[52px] lg:text-[58px] leading-[0.88] tracking-[-0.03em] uppercase">
-                WHOLLY GHANAIAN. <br />
-                <span className="text-gold">BUILT FOR GHANA.</span>
-              </h1>
-              <p className="mt-4 text-white/70 text-[14px] leading-[1.6] max-w-[520px] font-medium">Incorporated January 2024. Housing for essential workers, glass systems, PPA procurement — not decks. Site-first, cost-controlled, Ghanaian-led.</p>
-              <div className="mt-6 flex flex-wrap gap-2">
-                {[
-                  "PPA REGISTERED",
-                  "TAX ACT 915",
-                  "SSNIT ACT 766",
-                  "GA 135 6916",
-                ].map((t) => (
-                  <span key={t} className="bg-white text-charcoal text-[11px] font-bold tracking-[0.08em] uppercase px-3 py-1.5 rounded-[4px] border border-white/10">
-                    {t}
-                  </span>
-                ))}
-              </div>
-            </motion.div>
-            <div className="lg:col-span-5 relative">
-              <div className="aspect-[4/3] rounded-[6px] overflow-hidden border border-white/10 bg-charcoal-light relative">
-                <Image src="/images/about-community.jpg" alt="Nightingale Avenue community" fill className="object-cover" sizes="520px" priority />
-                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gold" aria-hidden />
-                <div className="absolute bottom-3 left-3 bg-white text-charcoal text-[11px] font-bold px-2.5 py-1 rounded-[4px]">ABELEMKPE • ACCRA</div>
-              </div>
-              <p className="mt-2 text-white/40 text-[11px] font-medium tracking-wide">No. 5 Nii Lomo Tackie Link — head office & yard</p>
-            </div>
+    <div className="bg-white">
+      {/* HERO — unified dark slab with plan on right */}
+      <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 bg-charcoal overflow-hidden isolate">
+        <div className="hidden lg:block absolute right-0 bottom-0 w-[620px] opacity-[0.14] pointer-events-none select-none" aria-hidden>
+          <div className="relative w-full aspect-[1.4/1]">
+            <Image src="/plan.webp" alt="" fill className="object-contain grayscale invert brightness-[1.6] contrast-125" sizes="560px" />
           </div>
-          {/* spec strip — hard 6px, not cream card */}
-          <div className="mt-8 grid grid-cols-2 md:grid-cols-4 border border-white/10 rounded-[6px] overflow-hidden bg-white">
-            {[
-              ["JAN 2024", "INCORPORATED"],
-              ["100% GHANAIAN", "OWNERSHIP"],
-              ["5 PILLARS", "SOLUTIONS"],
-              ["500 UNITS", "BLUEPRINT"],
-            ].map(([v, l]) => (
-              <div key={l} className="px-4 py-3 border-r border-charcoal/10 last:border-r-0 border-b md:border-b-0 even:border-r-0 md:even:border-r md:last:border-r-0 flex items-baseline gap-2">
-                <span className="font-archivo font-extrabold text-charcoal text-[13px] leading-none">{v}</span>
-                <span className="text-charcoal/40 text-[10px] font-bold tracking-[0.08em] uppercase">{l}</span>
-              </div>
-            ))}
-          </div>
-          <div className="h-6 md:h-8" />
         </div>
-      </section>
-
-      {/* Who we are — two col, hard type, spec list */}
-      <section className="section-padding bg-white relative border-t border-charcoal/5">
-        <div className="max-w-[1440px] mx-auto">
-          <div className="grid lg:grid-cols-12 gap-8 lg:gap-10">
-            <div className="lg:col-span-7">
-              <div className="flex items-center gap-3 mb-3">
-                <span className="w-10 h-px bg-gold" aria-hidden />
-                <span className="font-archivo font-bold text-charcoal text-[11px] tracking-[0.12em] uppercase">Who We Are</span>
-              </div>
-              <h2 className="font-archivo font-extrabold text-charcoal text-[28px] md:text-[36px] leading-[0.9] tracking-[-0.02em] uppercase">COMPANY OVERVIEW</h2>
-              <div className="mt-3 h-1 w-10 bg-gold" aria-hidden />
-              <div className="mt-5 space-y-3.5 text-[14px] leading-[1.65] text-charcoal/70 font-medium">
-                <p>
-                  <strong className="text-charcoal font-extrabold">{COMPANY.fullName}</strong> — incorporated <strong className="text-charcoal font-extrabold">{COMPANY.incorporated}</strong> for housing that essential workers can actually own. Nurses, doctors, teachers, security personnel — not abstract demand.
-                </p>
-                <p>Leadership built on site: 33-year MD, 24-year construction engineer, project managers with HND/Building Technology. Design & build with modern plant, vetted suppliers, safety-led crews.</p>
-                <p className="font-archivo font-bold text-charcoal text-[12px] tracking-[0.04em] uppercase">CONSTRUCTION • GLASS (FRAMELESS & ALUMINIUM) • PROCUREMENT & LOGISTICS • RENEWABLE ENERGY • IT</p>
+        <div className="absolute inset-0 bg-gradient-to-b from-charcoal-light/50 via-charcoal to-charcoal-dark" aria-hidden />
+        <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: "linear-gradient(rgba(185,151,91,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(185,151,91,0.5) 1px, transparent 1px)", backgroundSize: "56px 56px" }} aria-hidden />
+        <div className="absolute top-10 right-10 w-80 h-80 bg-gold/5 rounded-full blur-3xl pointer-events-none" aria-hidden />
+        <div className="relative z-10 max-w-[1440px] mx-auto px-6 lg:px-8">
+          <div className="max-w-3xl">
+            <div className="flex items-center gap-3 mb-5">
+              <span className="w-8 h-px bg-gold/60 hidden sm:block" aria-hidden />
+              <span className="font-archivo font-bold text-gold text-[11px] tracking-[0.14em] uppercase">About — Nightingale Avenue Construction</span>
             </div>
-              <ul className="mt-6 space-y-2">
-                {[
-                  "Design & Build — roads, drainage, full infrastructure",
-                  "Contemporary, culturally-tailored communities — parks, playgrounds, not renders",
-                  "PPA-registered sourcing — military, medical, ICT, tyres, fire — QA before acceptance",
-                ].map((li) => (
-                  <li key={li} className="flex gap-2.5 text-[13px] leading-relaxed text-charcoal/70">
-                    <CheckCircle2 size={14} className="text-gold mt-0.5 shrink-0" aria-hidden /> {li}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="lg:col-span-5">
-              <div className="bg-cream rounded-[6px] border border-charcoal/10 p-4">
-                <div className="flex items-center gap-2 text-[11px] font-bold tracking-[0.08em] uppercase text-charcoal">
-                  <Building size={14} className="text-gold" /> At a Glance
-                </div>
-                <div className="mt-3 divide-y divide-charcoal/10 border border-charcoal/10 rounded-[6px] bg-white overflow-hidden text-[13px]">
-                  <div className="flex justify-between px-3 py-2.5"><span className="text-charcoal/50 font-medium">Incorporated</span><span className="font-bold text-charcoal">January 2024</span></div>
-                  <div className="flex justify-between px-3 py-2.5"><span className="text-charcoal/50 font-medium">Ownership</span><span className="font-bold text-charcoal">100% Ghanaian</span></div>
-                  <div className="flex justify-between px-3 py-2.5"><span className="text-charcoal/50 font-medium">Office</span><span className="font-bold text-charcoal text-right text-xs">Abelemkpe, Accra<br />GA 135 6916</span></div>
-                  <div className="flex justify-between px-3 py-2.5"><span className="text-charcoal/50 font-medium">Contact</span><span className="font-bold text-charcoal text-xs">{COMPANY.phoneFormatted}</span></div>
-                </div>
-                <div className="mt-3 grid grid-cols-2 gap-2">
-                  {CERTIFICATES.map((c) => (
-                    <div key={c.title} className="bg-white rounded-[6px] p-3 border border-charcoal/10">
-                      <div className="flex items-center gap-1.5"><ShieldCheck size={11} className="text-gold" /><span className="text-[11px] font-extrabold uppercase tracking-wide text-charcoal leading-none">{c.title}</span></div>
-                      <p className="text-[11px] text-charcoal/50 leading-tight mt-1">{c.description}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              <p className="mt-2 text-[11px] text-charcoal/40 font-medium">Tax & SSNIT compliance — documents available on request.</p>
+            <h1 className="font-serif font-light text-white text-[38px] md:text-[50px] lg:text-[56px] leading-[0.9] tracking-tight">
+              Housing <span className="italic font-normal text-gold">for people</span> <br /> who keep Ghana running.
+            </h1>
+            <p className="mt-4 text-white/70 text-[14px] md:text-[15px] leading-[1.6] max-w-xl font-medium">Incorporated January 2024. For nurses, doctors, teachers and security personnel — contemporary streets with parks and renewables, cost-controlled and Ghanaian-led.</p>
+            <div className="mt-6 flex flex-wrap gap-2">
+              <span className="bg-white text-charcoal text-[11px] font-bold tracking-wide uppercase px-3 py-1.5 rounded-[4px]">500 Units Blueprint</span>
+              <span className="bg-white/10 text-white border border-white/15 text-[11px] font-bold tracking-wide uppercase px-3 py-1.5 rounded-[4px]">100% Ghanaian • Jan 2024</span>
             </div>
           </div>
         </div>
       </section>
 
-      <StatsSection />
+      {/* PULL QUOTE — large serif, not pill */}
+      <section className="bg-cream border-y border-charcoal/5">
+        <div className="max-w-[900px] mx-auto px-6 lg:px-8 py-12 md:py-16 text-center">
+          <Quote size={18} className="mx-auto text-gold mb-4" aria-hidden />
+          <p className="font-serif font-light text-charcoal text-[22px] md:text-[28px] leading-[1.3] tracking-tight">“We don&apos;t sell renders. We pour streets, fix drains, hang glass — and hand keys to the people who keep Ghana running.”</p>
+          <div className="mt-4 text-[12px]"><span className="font-bold text-charcoal">John Awua Kyerematen</span><span className="text-charcoal/40"> — Managing Director, 33 years • BSc, ACMA</span></div>
+        </div>
+      </section>
 
-      {/* Mission / Vision — hard 6px, top gold rule */}
-      <section className="section-padding bg-cream relative border-t border-charcoal/5">
-        <div className="max-w-[1440px] mx-auto">
-          <div className="grid md:grid-cols-2 gap-4">
-            {[
-              { icon: Target, kicker: "MISSION", title: "HOUSING THAT WORKERS CAN OWN", text: "Social housing blueprint for nurses, doctors, teachers, security personnel — sustainable, culturally-tailored, premium amenities at hard-controlled cost." },
-              { icon: Eye, kicker: "VISION", title: "GHANA'S HOUSING, FIXED AT SITE", text: "Transform the deficit into communities — not estates — fostering equity, ownership, and streets that work." },
-            ].map((c) => (
-              <div key={c.kicker} className="bg-white rounded-[6px] border border-charcoal/10 p-6 relative">
-                <div className="absolute top-0 left-0 right-0 h-1 bg-gold" aria-hidden />
-                <div className="w-9 h-9 rounded-[4px] bg-charcoal flex items-center justify-center text-white mb-4"><c.icon size={16} /></div>
-                <div className="text-[10px] font-bold tracking-[0.12em] uppercase text-gold">{c.kicker}</div>
-                <h3 className="font-archivo font-extrabold text-charcoal text-[14px] tracking-[-0.01em] uppercase mt-1">{c.title}</h3>
-                <p className="text-charcoal/70 text-[13px] leading-relaxed mt-2">{c.text}</p>
-              </div>
-            ))}
-          </div>
-          <div className="grid md:grid-cols-2 gap-4 mt-4">
-            <div className="bg-charcoal rounded-[6px] p-6 relative overflow-hidden">
-              <div className="absolute top-0 left-0 right-0 h-1 bg-gold" aria-hidden />
-              <div className="w-9 h-9 rounded-[4px] bg-white/10 flex items-center justify-center text-gold mb-4"><Users size={16} /></div>
-              <div className="text-[10px] font-bold tracking-[0.12em] uppercase text-gold">SOCIAL HOUSING</div>
-              <h3 className="font-archivo font-extrabold text-white text-[13px] uppercase mt-1">FOR ESSENTIAL WORKERS</h3>
-              <p className="text-white/65 text-[13px] leading-relaxed mt-2">With government, NGOs, and communities — needs assessment first, then design, then home-ownership facilitation.</p>
+      {/* STORY — asymmetric, drop-cap feel */}
+      <section className="max-w-[1440px] mx-auto px-6 lg:px-8 py-12 md:py-20">
+        <div className="grid lg:grid-cols-12 gap-8 lg:gap-12">
+          <div className="lg:col-span-4">
+            <div className="lg:sticky lg:top-24">
+              <div className="text-[11px] font-bold tracking-[0.14em] uppercase text-gold">Our story</div>
+              <h2 className="mt-2 font-serif font-light text-charcoal text-[28px] md:text-[32px] leading-[0.95] tracking-tight">Company <br /> overview</h2>
+              <div className="mt-4 w-8 h-px bg-gold" aria-hidden />
+              <p className="mt-4 text-charcoal/50 text-[12px] leading-relaxed">Modern plant, vetted suppliers, safety-led crews. Design & build with roads and drainage, not just walls.</p>
             </div>
-            <div className="bg-white rounded-[6px] border border-charcoal/10 p-6 relative">
-              <div className="absolute top-0 left-0 right-0 h-1 bg-gold" aria-hidden />
-              <div className="w-9 h-9 rounded-[4px] bg-gold/15 flex items-center justify-center text-charcoal mb-4"><Award size={16} /></div>
-              <div className="text-[10px] font-bold tracking-[0.12em] uppercase text-gold">SUSTAINABLE</div>
-              <h3 className="font-archivo font-extrabold text-charcoal text-[13px] uppercase mt-1">PARKS, PLAYGROUNDS, RENEWABLES</h3>
-              <p className="text-charcoal/70 text-[13px] leading-relaxed mt-2">Function + comfort + culture. Not imported estates — Ghanaian streets, shade, play, and cost that holds.</p>
+          </div>
+          <div className="lg:col-span-8">
+            <div className="prose prose-neutral max-w-none">
+              <p className="text-charcoal text-[15px] leading-[1.75] font-medium">
+                <span className="font-serif text-[48px] leading-none float-left mr-2 mt-1 text-gold">N</span>
+                ightingale Avenue Construction is recognised for real estate and civil engineering. Incorporated January 2024, we focus on affordable housing for middle-income and essential workers — while solving Ghana&apos;s structural housing deficit.
+              </p>
+              <p className="text-charcoal/65 text-[14px] leading-[1.75] mt-4">
+                Leadership from site: HND Building Technology, BSc Construction Engineering, MSc Project Management. We deliver contemporary communities with premium amenities — parks, playgrounds — without exceeding budget. Culturally tailored, inclusive, and built to last.
+              </p>
+              <p className="text-charcoal/65 text-[14px] leading-[1.75] mt-4">
+                We are a solutions provider in construction, frameless & aluminium glass, procurement & logistics (PPA-registered), renewable energy and IT — from sourcing to handover.
+              </p>
+            </div>
+            <div className="mt-6 grid grid-cols-3 gap-3 text-[11px]">
+              <span className="bg-charcoal text-white px-3 py-2 rounded-[4px] font-bold uppercase tracking-wide flex items-center gap-1.5"><CheckCircle2 size={11} className="text-gold" /> PPA</span>
+              <span className="bg-white border border-charcoal/10 text-charcoal px-3 py-2 rounded-[4px] font-bold uppercase tracking-wide">Tax Act 915</span>
+              <span className="bg-white border border-charcoal/10 text-charcoal px-3 py-2 rounded-[4px] font-bold uppercase tracking-wide">SSNIT Act 766</span>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Timeline — hard vertical with left gold rule, not alternating pills */}
-      <section className="section-padding bg-white relative border-t border-charcoal/5">
-        <div className="max-w-[900px] mx-auto">
-          <SectionHeading tag="Our Journey" title="Company Timeline" description="Six steps from incorporation to nationwide delivery — dated, not vague." />
-          <div className="relative border-l border-charcoal/10 ml-3 md:ml-0">
-            {TIMELINE.map((item, i) => (
-              <div key={item.title} className="relative pl-8 md:pl-8 pb-6 last:pb-0">
-                <span className="absolute left-[-5px] top-1 w-2.5 h-2.5 bg-gold rounded-[2px] border-2 border-white shadow-sm" aria-hidden />
-                <div className="bg-cream rounded-[6px] border border-charcoal/10 p-4 md:p-5">
-                  <div className="flex flex-wrap items-baseline gap-2">
-                    <span className="font-archivo font-extrabold text-gold text-[11px] tracking-[0.08em] uppercase">{item.year}</span>
-                    <span className="w-1 h-1 bg-charcoal/20 rounded-full" aria-hidden />
-                    <h4 className="font-archivo font-extrabold text-charcoal text-[13px] uppercase tracking-[-0.01em]">{item.title}</h4>
-                  </div>
-                  <p className="text-charcoal/70 text-[13px] leading-relaxed mt-1.5">{item.desc}</p>
-                </div>
-              </div>
-            ))}
+      {/* PRINCIPLES — 2 large editorial, not 4 equal */}
+      <section className="bg-cream border-y border-charcoal/5">
+        <div className="max-w-[1440px] mx-auto px-6 lg:px-8 py-12 md:py-16">
+          <div className="grid md:grid-cols-12 gap-6">
+            <div className="md:col-span-7 bg-white border border-charcoal/10 p-8">
+              <div className="text-[11px] font-bold tracking-[0.14em] uppercase text-gold">Mission</div>
+              <h3 className="mt-1 font-serif font-light text-charcoal text-[24px] leading-[1] tracking-tight">Housing that workers can own.</h3>
+              <p className="mt-3 text-charcoal/60 text-[14px] leading-relaxed">For nurses, doctors, teachers, security — sustainable, contemporary communities at controlled cost.</p>
+            </div>
+            <div className="md:col-span-5 bg-charcoal p-8 text-white">
+              <div className="text-[11px] font-bold tracking-[0.14em] uppercase text-gold">Vision</div>
+              <h3 className="mt-1 font-serif font-light text-[24px] leading-[1] tracking-tight">Streets that work.</h3>
+              <p className="mt-3 text-white/60 text-[14px] leading-relaxed">Not estates on paper — equity, ownership, and future you can walk.</p>
+            </div>
           </div>
         </div>
       </section>
 
-      <CoreValues />
-
-      {/* Team — hard 6px, no tilt, initials only, 8 leaders + rest collapsed */}
-      <section className="section-padding bg-cream relative border-t border-charcoal/5">
-        <div className="max-w-[1440px] mx-auto">
-          <SectionHeading tag="Our Team" title="Board & Management" description="Leaders who approve strategy and manage site — not a wall of faces." />
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {TEAM_MEMBERS.slice(0, 8).map((m) => (
-              <div key={m.name} className="bg-white rounded-[6px] border border-charcoal/10 overflow-hidden">
-                <div className="h-1 bg-gold" aria-hidden />
-                <div className="h-20 bg-charcoal flex items-center justify-center relative">
-                  <div className="w-12 h-12 rounded-[4px] bg-white/10 border border-white/10 flex items-center justify-center">
-                    <span className="font-archivo font-extrabold text-gold text-[11px]">{m.name.split(" ").map((n) => n[0]).join("").slice(0, 3)}</span>
-                  </div>
-                  <span className="absolute bottom-2 right-2 bg-white text-charcoal text-[10px] font-bold px-1.5 py-0.5 rounded-[4px]">{m.experience}</span>
-                </div>
-                <div className="p-4">
-                  <h3 className="font-archivo font-extrabold text-charcoal text-[12px] uppercase tracking-[-0.01em] leading-tight">{m.name}</h3>
-                  <p className="text-gold text-[11px] font-bold uppercase tracking-wide mt-0.5">{m.position}</p>
-                  <p className="text-charcoal/40 text-[11px] mt-1">{m.qualification}</p>
-                  <p className="text-charcoal/70 text-[12px] leading-relaxed mt-2 line-clamp-2">{m.bio}</p>
-                </div>
+      {/* TIMELINE — horizontal on desktop, editorial, with images */}
+      <section className="max-w-[1440px] mx-auto px-6 lg:px-8 py-12 md:py-16">
+        <div className="flex items-baseline justify-between gap-4">
+          <h2 className="font-serif font-light text-charcoal text-[28px] md:text-[32px] tracking-tight">Timeline</h2>
+          <span className="text-charcoal/30 text-xs hidden md:inline">Jan 2024 → Nationwide</span>
+        </div>
+        <div className="mt-6 flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-thin">
+          {TIMELINE.map((t) => (
+            <div key={t.year} className="snap-start shrink-0 w-[300px] border border-charcoal/10 bg-white">
+              <div className="aspect-[4/3] relative bg-cream overflow-hidden">
+                <Image src={t.img} alt={t.k} fill className="object-cover" sizes="300px" />
               </div>
-            ))}
+              <div className="p-4">
+                <div className="text-[11px] font-bold tracking-[0.08em] text-gold">{t.year} — {t.k}</div>
+                <div className="font-serif font-medium text-charcoal text-[14px] mt-1 leading-tight">{t.t}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* TEAM — featured MD large, rest 7 small */}
+      <section className="bg-cream border-y border-charcoal/5">
+        <div className="max-w-[1440px] mx-auto px-6 lg:px-8 py-12 md:py-16">
+          <div className="flex items-end justify-between gap-4">
+            <h2 className="font-serif font-light text-charcoal text-[28px] md:text-[32px] tracking-tight">Leadership</h2>
+            <Link href="/contact" className="hidden md:inline-flex items-center gap-1 text-gold text-xs font-bold uppercase tracking-wide">Work with us <ArrowUpRight size={12} /></Link>
+          </div>
+          {/* Featured */}
+          <div className="mt-6 grid lg:grid-cols-12 gap-6">
+            <div className="lg:col-span-5 bg-white border border-charcoal/10 p-6 flex gap-4">
+              <div className="w-20 h-24 bg-charcoal flex items-center justify-center shrink-0"><span className="font-archivo font-extrabold text-gold text-xs">JAK</span></div>
+              <div>
+                <h3 className="font-serif font-medium text-charcoal text-[16px]">{TEAM_MEMBERS[0].name}</h3>
+                <p className="text-gold text-[11px] font-bold uppercase tracking-wide">{TEAM_MEMBERS[0].position} • {TEAM_MEMBERS[0].experience}</p>
+                <p className="text-charcoal/60 text-[12px] leading-relaxed mt-2">{TEAM_MEMBERS[0].bio}</p>
+                <p className="text-charcoal/40 text-[11px] mt-1">{TEAM_MEMBERS[0].qualification}</p>
+              </div>
+            </div>
+            <div className="lg:col-span-7 grid sm:grid-cols-3 gap-3">
+              {TEAM_MEMBERS.slice(1, 7).map((m) => (
+                <div key={m.name} className="bg-white border border-charcoal/10 p-4">
+                  <div className="font-serif font-medium text-charcoal text-[13px] leading-tight">{m.name}</div>
+                  <div className="text-gold text-[10px] font-bold uppercase tracking-wide mt-1">{m.position}</div>
+                  <div className="text-charcoal/40 text-[10px] mt-1">{m.experience}</div>
+                </div>
+              ))}
+            </div>
           </div>
           <details className="mt-6 group">
-            <summary className="cursor-pointer list-none inline-flex items-center gap-2 text-charcoal font-bold text-[12px] tracking-[0.06em] uppercase border border-charcoal/10 rounded-[6px] px-4 py-2 bg-white hover:bg-charcoal hover:text-white transition-colors">
-              <span className="w-2 h-2 bg-gold rounded-[2px] group-open:rotate-45 transition-transform" aria-hidden /> Show all {TEAM_MEMBERS.length} members
-            </summary>
-            <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              {TEAM_MEMBERS.slice(8).map((m) => (
-                <div key={m.name} className="bg-white rounded-[6px] border border-charcoal/10 p-4">
-                  <h3 className="font-archivo font-extrabold text-charcoal text-[12px] uppercase">{m.name}</h3>
-                  <p className="text-gold text-[11px] font-bold uppercase">{m.position}</p>
-                  <p className="text-charcoal/40 text-[11px] mt-1">{m.experience} • {m.qualification}</p>
+            <summary className="list-none inline-flex items-center gap-2 text-charcoal font-bold text-[11px] tracking-[0.06em] uppercase border border-charcoal/10 rounded-[4px] px-3 py-2 bg-white cursor-pointer"><span className="w-2 h-2 bg-gold rounded-[2px] group-open:rotate-45 transition-transform" aria-hidden /> Show all {TEAM_MEMBERS.length}</summary>
+            <div className="mt-4 grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
+              {TEAM_MEMBERS.slice(7).map((m) => (
+                <div key={m.name} className="bg-white border border-charcoal/10 p-3">
+                  <div className="font-serif font-medium text-charcoal text-[12px]">{m.name}</div>
+                  <div className="text-gold text-[10px] font-bold uppercase">{m.position}</div>
+                  <div className="text-charcoal/40 text-[10px]">{m.experience} • {m.qualification}</div>
                 </div>
               ))}
             </div>
           </details>
-          <p className="mt-4 text-[11px] text-charcoal/40 font-medium">Board appoints MD, Chair & Vice-Chair lead governance, Secretary is non-board.</p>
         </div>
       </section>
 
-      <CTASection />
-    </>
+      {/* VALUES — quiet 3-col, not card wall */}
+      <section className="max-w-[1440px] mx-auto px-6 lg:px-8 py-10 md:py-14">
+        <div className="grid md:grid-cols-3 gap-6 border-t border-charcoal/10 pt-6">
+          {[
+            ["Quality & Affordability", "Housing that enhances living without exceeding budget."],
+            ["Sustainability", "Green spaces and renewables integrated from day one."],
+            ["Inclusivity", "Tailored to Ghana's diverse cultural and social dynamics."],
+          ].map(([t, d]) => (
+            <div key={t}>
+              <div className="text-[11px] font-bold tracking-[0.08em] uppercase text-gold">{t}</div>
+              <p className="text-charcoal/60 text-[13px] leading-relaxed mt-1">{d}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+    </div>
   );
 }

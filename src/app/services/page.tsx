@@ -11,8 +11,13 @@ import { SERVICES } from "@/lib/data";
 export default function ServicesPage() {
   return (
     <>
-      {/* Hero — unified */}
+      {/* Hero — with plan on right */}
       <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 bg-charcoal overflow-hidden isolate">
+        <div className="hidden lg:block absolute right-0 bottom-0 w-[620px] opacity-[0.14] pointer-events-none select-none" aria-hidden>
+          <div className="relative w-full aspect-[1.4/1]">
+            <Image src="/plan.webp" alt="" fill className="object-contain grayscale invert brightness-[1.6] contrast-125" sizes="560px" />
+          </div>
+        </div>
         <div className="absolute inset-0 bg-gradient-to-b from-charcoal-light/50 via-charcoal to-charcoal-dark" aria-hidden />
         <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: "linear-gradient(rgba(201,169,106,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(201,169,106,0.5) 1px, transparent 1px)", backgroundSize: "56px 56px" }} aria-hidden />
         <BlueprintCorner className="-top-16 -right-16 hidden lg:block opacity-40" />
@@ -24,8 +29,8 @@ export default function ServicesPage() {
               <span className="w-8 h-px bg-gold/60 hidden sm:block" aria-hidden />
               <span className="font-archivo font-semibold text-gold text-[11px] tracking-[0.16em] uppercase">Our Solutions — 5 Pillars</span>
             </div>
-            <h1 className="font-archivo font-extrabold text-[40px] md:text-[52px] lg:text-[60px] leading-[0.88] tracking-[-0.03em] uppercase text-white">
-              SOLUTIONS BUILT <span className="text-gold">AROUND GHANA&apos;s Needs</span>
+            <h1 className="font-serif font-light text-[38px] md:text-[50px] lg:text-[56px] leading-[0.9] tracking-tight text-white">
+              Solutions built <span className="italic font-normal text-gold">around Ghana&apos;s Needs</span>
             </h1>
             <p className="mt-4 text-white/70 text-[14px] md:text-[15px] leading-[1.6] max-w-xl font-medium">Construction & affordable housing, frameless & aluminium glass, procurement & logistics (PPA-registered), renewable energy and IT — tailored, transparent and technology-driven.</p>
           </motion.div>
@@ -45,7 +50,7 @@ export default function ServicesPage() {
               <div className={`grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center ${!isEven ? "lg:grid-flow-dense" : ""}`}>
                 <motion.div initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-60px" }} transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }} className={!isEven ? "lg:col-start-2" : ""}>
                   <div className="w-11 h-11 rounded-xl bg-gold/10 flex items-center justify-center mb-5 text-gold"><Icon size={20} strokeWidth={1.7} aria-hidden /></div>
-                  <h2 className="font-archivo font-extrabold text-[26px] md:text-[32px] leading-[0.9] tracking-[-0.02em] uppercase text-charcoal">{service.title}</h2>
+                  <h2 className="font-serif font-light text-[28px] md:text-[34px] leading-[0.95] tracking-tight text-charcoal">{service.title}</h2>
                   <p className="mt-4 text-charcoal/70 text-[15px] leading-relaxed">{service.description}</p>
                   <ul className="space-y-2.5 mt-6 mb-8">
                     {service.features.map((feature) => (

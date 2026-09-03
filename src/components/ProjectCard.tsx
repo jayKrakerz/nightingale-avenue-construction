@@ -38,7 +38,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
       </div>
 
       <div className="p-5 flex flex-col flex-1">
-        <h3 className="font-archivo font-extrabold text-[14px] leading-tight tracking-[-0.01em] text-charcoal uppercase line-clamp-2">{project.title}</h3>
+        <h3 className="font-serif font-medium text-[16px] leading-tight text-charcoal line-clamp-2">{project.title}</h3>
         <div className="flex items-center gap-1.5 text-charcoal/40 text-[11px] font-semibold tracking-wide mt-1.5">
           <MapPin size={11} className="text-gold" /> {project.location} <span className="mx-1">•</span> {project.completionYear}
         </div>

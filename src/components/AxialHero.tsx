@@ -58,12 +58,11 @@ export default function AxialHero() {
 
             <motion.h1
               variants={{ hidden: { opacity: 0, y: 10 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] } } }}
-              className="font-archivo font-extrabold text-white leading-[0.88] tracking-[-0.03em] text-[40px] sm:text-[48px] md:text-[52px] lg:text-[60px]"
+              className="font-serif font-light text-white leading-[0.9] tracking-tight text-[38px] sm:text-[46px] md:text-[50px] lg:text-[56px]"
             >
-              <span className="block">EXCEPTIONAL</span>
-              <span className="block">SERVICE</span>
-              <span className="block text-gold">EXCEEDING</span>
-              <span className="block text-white/90">EXPECTATIONS</span>
+              <span className="block">Exceptional</span>
+              <span className="block">service exceeding</span>
+              <span className="block italic font-normal text-gold">expectations</span>
             </motion.h1>
 
             <motion.p variants={{ hidden: { opacity: 0 }, visible: { opacity: 1, transition: { duration: 0.45 } } }} className="mt-5 text-white/70 text-[14px] md:text-[15px] leading-[1.6] max-w-[480px] font-medium">
@@ -90,8 +89,8 @@ export default function AxialHero() {
               <div className="relative overflow-hidden rounded-[6px] bg-white border border-charcoal/10 p-5 flex gap-4">
                 <div className="absolute top-0 left-0 w-full h-1 bg-gold" aria-hidden />
                 <div className="flex-1 min-w-0 pt-1">
-                  <div className="text-[10px] font-bold tracking-[0.14em] uppercase text-charcoal/40">Featured — Accra</div>
-                  <h3 className="font-archivo font-extrabold text-charcoal text-[15px] leading-tight mt-1">AFFORDABLE HOUSING</h3>
+                  <div className="text-[10px] font-bold tracking-[0.12em] uppercase text-charcoal/40">Featured — Accra</div>
+                  <h3 className="font-serif font-medium text-charcoal text-[15px] leading-tight mt-1">Affordable Housing</h3>
                   <div className="font-archivo font-extrabold text-charcoal text-[28px] leading-none mt-2">
                     500 <span className="text-[12px] font-bold tracking-wide text-gold">UNITS</span>
                   </div>

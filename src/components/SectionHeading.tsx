@@ -26,7 +26,7 @@ export default function SectionHeading({ tag, title, description, align = "cente
           <span className={`w-8 h-px ${light ? "bg-gold/50" : "bg-gold"}`} aria-hidden />
         </div>
       )}
-      <h2 className={`font-archivo font-extrabold tracking-[-0.02em] leading-[0.9] uppercase text-[30px] md:text-[38px] lg:text-[42px] ${light ? "text-white" : "text-charcoal"}`}>{title}</h2>
+      <h2 className={`font-serif font-light tracking-tight leading-[0.95] text-[32px] md:text-[40px] lg:text-[44px] ${light ? "text-white" : "text-charcoal"}`}>{title}</h2>
       {description && <p className={`mt-3 text-[14px] leading-[1.6] max-w-[640px] font-medium ${align === "center" ? "mx-auto" : ""} ${light ? "text-white/70" : "text-charcoal/65"}`}>{description}</p>}
     </motion.div>
   );

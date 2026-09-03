@@ -51,7 +51,7 @@ export default function Navbar() {
     <>
       <div className="fixed top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/25 to-transparent z-[61] pointer-events-none" />
       <motion.header
-        style={{ backgroundColor: headerBg as unknown as string, backdropFilter: headerBlur as unknown as string, WebkitBackdropFilter: headerBlur as unknown as string, boxShadow: headerShadow as unknown as string }}
+        style={{ backgroundColor: headerBg as unknown as string, backdropFilter: headerBlur as unknown as string, WebkitBackdropFilter: headerBlur as unknown as string, boxShadow: headerShadow as unknown as string } as unknown as React.CSSProperties}
         className={`fixed top-0 left-0 right-0 z-50 border-b transition-all duration-300 ${scrolled ? "border-charcoal/5 py-3" : "border-transparent py-5"}`}
       >
         <nav className="max-w-[1440px] mx-auto px-6 lg:px-8 flex items-center justify-between">
