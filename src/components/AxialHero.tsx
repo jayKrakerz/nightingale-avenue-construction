@@ -103,9 +103,6 @@ export default function AxialHero() {
                   <Image src="/images/featured-estate.jpg" alt="Featured affordable housing estate" fill className="object-cover grayscale-[0.1]" sizes="110px" />
                 </div>
               </div>
-              <div className="mt-3 flex items-center gap-2 text-[11px] font-medium text-white/40">
-                <span className="w-6 h-px bg-white/20" aria-hidden /> 500 units • Design & Build • 2024
-              </div>
             </motion.div>
           </div>
         </motion.div>

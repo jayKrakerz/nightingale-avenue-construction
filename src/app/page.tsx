@@ -163,35 +163,35 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-6 md:gap-8">
             <div>
               <BeforeAfterSlider
-                beforeSrc="/images/construction.jpg"
-                afterSrc="/images/featured-estate.jpg"
-                beforeLabel="Bare Structure"
-                afterLabel="Finished Home"
-                beforeAlt="Bare construction site before completion"
-                afterAlt="Completed affordable housing after finishing"
+                beforeSrc="/images/before-stairs.png"
+                afterSrc="/images/after-stairs.png"
+                beforeLabel="Before"
+                afterLabel="After"
+                beforeAlt="Staircase before renovation"
+                afterAlt="Staircase after renovation"
                 initial={58}
               />
               <div className="mt-3 flex items-center justify-between">
-                <h3 className="font-serif text-[15px] font-medium text-charcoal">Construction → Completion</h3>
-                <span className="text-xs text-charcoal/40">500 Units • Accra</span>
+                <h3 className="font-serif text-[15px] font-medium text-charcoal">Staircase — Before → After</h3>
+                <span className="text-xs text-charcoal/40">Renovation • Accra</span>
               </div>
-              <p className="text-sm text-charcoal/70 mt-1">Design & Build from shell to sustainable community with parks & renewable integration.</p>
+              <p className="text-sm text-charcoal/70 mt-1">Raw concrete to finished balustrade — precise glass and metal craftsmanship.</p>
             </div>
             <div>
               <BeforeAfterSlider
-                beforeSrc="/images/about-community.jpg"
-                afterSrc="/images/glass-frameless.jpg"
-                beforeLabel="Solid Wall"
-                afterLabel="Frameless Glass"
-                beforeAlt="Solid wall before glass installation"
-                afterAlt="Frameless glass partition after installation"
+                beforeSrc="/images/path-before.png"
+                afterSrc="/images/path-after.png"
+                beforeLabel="Before"
+                afterLabel="After"
+                beforeAlt="Pathway before paving"
+                afterAlt="Pathway after paving"
                 initial={62}
               />
               <div className="mt-3 flex items-center justify-between">
-                <h3 className="font-serif text-[15px] font-medium text-charcoal">Solid → Glass Innovation</h3>
-                <span className="text-xs text-charcoal/40">Frameless • Accra</span>
+                <h3 className="font-serif text-[15px] font-medium text-charcoal">Pathway — Before → After</h3>
+                <span className="text-xs text-charcoal/40">Paving • Accra</span>
               </div>
-              <p className="text-sm text-charcoal/70 mt-1">Clean, frameless partitions and curtain walls that maximize light and openness.</p>
+              <p className="text-sm text-charcoal/70 mt-1">From bare ground to paved walkway — durable, drainage-ready finishing.</p>
             </div>
           </div>
           <p className="text-center text-xs text-charcoal/30 mt-6 tracking-wide">Tip: Drag the handle or use ← → keys. Focus the slider and try.</p>
