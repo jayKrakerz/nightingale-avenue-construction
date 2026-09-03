@@ -24,6 +24,7 @@ import ContactForm from "@/components/ContactForm";
 import { TrustMarquee } from "@/components/Marquee";
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 import AxialHero from "@/components/AxialHero";
+import { DotGrid, BlueprintCorner, ArchLines, WaveLines, TopoLines, GrainOverlay } from "@/components/SectionTexture";
 import { SERVICES, PROJECTS, COMPANY } from "@/lib/data";
 
 export default function Home() {
@@ -34,58 +35,61 @@ export default function Home() {
       {/* Single subtle marquee only */}
       <TrustMarquee />
 
-      {/* Intro */}
-      <section className="section-padding bg-cream relative">
-        <div className="absolute top-0 inset-x-0 h-px bg-charcoal/5" />
-        <div className="max-w-[1440px] mx-auto">
-          <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
-            <motion.div initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.45, ease: "easeOut" }} className="lg:col-span-7">
-              <div className="inline-flex items-center gap-2 text-gold-dark text-[11px] tracking-[0.22em] uppercase font-semibold mb-4">
-                <span className="w-6 h-px bg-gold-dark/30" /> About Nightingale Avenue Construction
+      {/* Intro — hardened: slab, 6px, tight type, no pills */}
+      <section className="section-padding bg-cream relative overflow-hidden border-t border-charcoal/5">
+        <div className="absolute top-0 inset-x-0 h-px bg-gold/20" aria-hidden />
+        {/* technical rule, not dotgrid */}
+        <div className="absolute inset-0 pointer-events-none opacity-[0.03]" aria-hidden style={{ backgroundImage: "linear-gradient(rgba(28,33,40,0.8) 1px, transparent 1px)", backgroundSize: "100% 32px" }} />
+        <div className="relative max-w-[1440px] mx-auto">
+          <div className="grid lg:grid-cols-12 gap-8 lg:gap-10 items-start">
+            <motion.div initial={{ opacity: 0, y: 8 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-60px" }} transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }} className="lg:col-span-7">
+              <div className="flex items-center gap-3 mb-4">
+                <span className="w-10 h-px bg-gold" aria-hidden />
+                <span className="font-archivo font-bold text-charcoal text-[11px] tracking-[0.12em] uppercase">About Nightingale Avenue Construction</span>
               </div>
-              <h2 className="font-serif font-light text-[36px] md:text-[46px] leading-[0.95] tracking-tight text-charcoal">
-                Building Ghana with <span className="italic font-normal text-gold">excellence <br /> & equity.</span>
+              <h2 className="font-archivo font-extrabold text-charcoal leading-[0.88] tracking-[-0.03em] text-[30px] md:text-[40px]">
+                BUILDING GHANA WITH <span className="text-gold">EXCELLENCE & EQUITY.</span>
               </h2>
-              <div className="mt-6 space-y-4 text-[15px] leading-relaxed text-charcoal/70 font-light max-w-prose">
-                <p><strong className="text-charcoal font-medium">{COMPANY.fullName}</strong> — wholly owned Ghanaian, incorporated <strong className="text-charcoal font-medium">{COMPANY.incorporated}</strong>, recognized for excellence in real estate & civil engineering.</p>
-                <p>Our social housing blueprint tackles the chronic shortage faced by nurses, doctors, teachers and security personnel — contemporary communities with premium amenities at affordable cost.</p>
-                <p>Beyond housing: <strong className="text-charcoal font-medium">frameless & aluminium glass</strong>, <strong className="text-charcoal font-medium">PPA-registered procurement & logistics</strong>, <strong className="text-charcoal font-medium">renewable energy</strong> and <strong className="text-charcoal font-medium">IT & communications.</strong></p>
+              <div className="mt-4 h-1 w-12 bg-gold" aria-hidden />
+              <div className="mt-5 space-y-3.5 text-[14px] leading-[1.65] text-charcoal/70 font-medium max-w-prose">
+                <p><strong className="text-charcoal font-bold">{COMPANY.fullName}</strong> — wholly owned Ghanaian, incorporated <strong className="text-charcoal font-bold">{COMPANY.incorporated}</strong>. Real estate & civil engineering, built on site.</p>
+                <p>Social housing blueprint for nurses, doctors, teachers and security personnel — solid communities, hard costs controlled, no render promises.</p>
+                <p className="text-charcoal font-semibold text-[13px] tracking-wide">FRAMLESS & ALUMINIUM GLASS • PPA-REGISTERED PROCUREMENT • RENEWABLE ENERGY • IT & COMMUNICATIONS</p>
               </div>
-              <div className="grid grid-cols-1 xs:grid-cols-2 gap-2.5 sm:gap-3 mt-8">
+              {/* Spec strip — not pills */}
+              <div className="mt-6 grid grid-cols-2 border border-charcoal/10 rounded-[6px] overflow-hidden bg-white">
                 {[
-                  "Wholly Ghanaian Owned",
-                  "PPA Registered Supplier",
-                  "Tax & SSNIT Compliant",
-                  "End-to-End Solutions",
-                ].map((item) => (
-                  <div key={item} className="flex items-center gap-2.5 bg-white rounded-full px-3.5 sm:px-4 py-2.5 border border-charcoal/5">
-                    <CheckCircle2 size={14} className="text-gold shrink-0" aria-hidden />
-                    <span className="text-charcoal text-[11px] sm:text-xs font-medium leading-tight">{item}</span>
+                  ["100%","GHANAIAN OWNED"],
+                  ["PPA","REGISTERED"],
+                  ["TAX / SSNIT","COMPLIANT"],
+                  ["2024","ESTABLISHED"],
+                ].map(([v,l]) => (
+                  <div key={l} className="flex items-center gap-3 px-4 py-3 border-charcoal/10 border-r border-b last:border-r-0 even:border-r-0 nth-[3]:border-b-0 nth-[4]:border-b-0">
+                    <span className="font-archivo font-extrabold text-gold text-[14px] leading-none">{v}</span>
+                    <span className="text-charcoal text-[11px] font-bold tracking-[0.08em] uppercase leading-tight">{l}</span>
                   </div>
                 ))}
               </div>
             </motion.div>
 
-            <motion.div initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.45, ease: "easeOut", delay: 0.08 }} className="lg:col-span-5">
-              <div className="bg-white rounded-[28px] border border-charcoal/5 p-6 shadow-soft">
-                <div className="aspect-[4/3] rounded-2xl overflow-hidden relative bg-charcoal">
-                  <Image src="/images/about-community.jpg" alt="Nightingale Avenue Construction community aerial view" fill className="object-cover opacity-90" sizes="(max-width: 1024px) 100vw, 520px" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent" />
-                  <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between">
-                    <span className="bg-white text-charcoal text-xs font-semibold px-3 py-1.5 rounded-full">Abelemkpe, Accra</span>
-                    <span className="bg-gold text-charcoal text-xs font-bold px-3 py-1.5 rounded-full">GA 135 6916</span>
-                  </div>
+            <motion.div initial={{ opacity: 0, y: 8 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-60px" }} transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1], delay: 0.06 }} className="lg:col-span-5">
+              <div className="bg-white rounded-[6px] border border-charcoal/10 p-3 shadow-sm">
+                <div className="aspect-[4/3] rounded-[4px] overflow-hidden relative bg-charcoal">
+                  <Image src="/images/about-community.jpg" alt="Nightingale Avenue Construction community aerial view" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 520px" />
+                  <div className="absolute bottom-0 left-0 right-0 h-px bg-gold" aria-hidden />
+                  <div className="absolute bottom-3 left-3 bg-white text-charcoal text-[11px] font-bold tracking-wide px-2.5 py-1 rounded-[4px] border border-charcoal/10">ABELEMKPE, ACCRA</div>
+                  <div className="absolute bottom-3 right-3 bg-charcoal text-white text-[11px] font-bold tracking-wide px-2.5 py-1 rounded-[4px]">GA 135 6916</div>
                 </div>
-                <div className="grid grid-cols-3 gap-3 mt-4">
+                <div className="grid grid-cols-3 gap-2 mt-3">
                   {[
                     { icon: Award, label: "PPA", sub: "Registered" },
                     { icon: ShieldCheck, label: "SSNIT", sub: "Certified" },
                     { icon: Sparkles, label: "NAC", sub: "Since 2024" },
                   ].map((b) => (
-                    <div key={b.label} className="bg-cream rounded-2xl p-3 text-center border border-charcoal/5">
-                      <b.icon size={16} className="mx-auto text-gold mb-1" aria-hidden />
-                      <div className="text-xs font-semibold text-charcoal">{b.label}</div>
-                      <div className="text-[11px] text-charcoal/40">{b.sub}</div>
+                    <div key={b.label} className="bg-cream rounded-[4px] p-2.5 text-center border border-charcoal/10">
+                      <b.icon size={13} className="mx-auto text-charcoal mb-1" aria-hidden />
+                      <div className="text-[11px] font-bold tracking-wide text-charcoal leading-none">{b.label}</div>
+                      <div className="text-[10px] text-charcoal/40 font-medium">{b.sub}</div>
                     </div>
                   ))}
                 </div>
@@ -96,8 +100,11 @@ export default function Home() {
       </section>
 
       {/* Services — grid on desktop, swipe hint mobile */}
-      <section className="section-padding bg-white">
-        <div className="max-w-[1440px] mx-auto">
+      <section className="section-padding bg-white relative overflow-hidden">
+        <DotGrid opacity={0.025} />
+        <div className="absolute top-12 right-0 w-[420px] h-[420px] rounded-full bg-gold/5 blur-3xl pointer-events-none" aria-hidden />
+        <ArchLines className="top-0 left-1/2 -translate-x-1/2 opacity-60 hidden md:block" />
+        <div className="relative max-w-[1440px] mx-auto">
           <SectionHeading
             tag="Our Solutions"
             title="Five pillars. One trusted partner."
@@ -119,8 +126,11 @@ export default function Home() {
       <StatsSection />
 
       {/* Projects — grid */}
-      <section className="section-padding bg-cream">
-        <div className="max-w-[1440px] mx-auto">
+      <section className="section-padding bg-cream relative overflow-hidden">
+        <DotGrid opacity={0.03} />
+        <TopoLines opacity={0.04} />
+        <div className="absolute -bottom-20 -left-20 w-[520px] h-[520px] rounded-full bg-charcoal/5 blur-3xl pointer-events-none" aria-hidden />
+        <div className="relative max-w-[1440px] mx-auto">
           <SectionHeading
             tag="Our Work"
             title="Built with precision, lasting value"
@@ -139,14 +149,16 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Before / After — Nightingale Avenue Construction Transformations (Lillipad-style) */}
+      {/* Before / After */}
       <section className="section-padding bg-white relative overflow-hidden">
-        <div className="absolute top-0 inset-x-0 h-px bg-charcoal/5" />
-        <div className="max-w-[1440px] mx-auto">
+        <WaveLines opacity={0.06} />
+        <DotGrid opacity={0.02} />
+        <div className="absolute top-0 inset-x-0 h-px bg-charcoal/5" aria-hidden />
+        <div className="relative max-w-[1440px] mx-auto">
           <SectionHeading
             tag="Before / After"
             title="See the transformation"
-            description="Drag to compare — bare structure to finishing, shell to glass. Craftsmanship you can feel, like Lillipad's Work/Life mode."
+            description="Drag to compare — bare structure to finishing, shell to glass. Craftsmanship you can feel."
           />
           <div className="grid lg:grid-cols-2 gap-6 md:gap-8">
             <div>
@@ -163,7 +175,7 @@ export default function Home() {
                 <h3 className="font-serif text-[15px] font-medium text-charcoal">Construction → Completion</h3>
                 <span className="text-xs text-charcoal/40">500 Units • Accra</span>
               </div>
-              <p className="text-sm text-charcoal/60 mt-1">Design & Build from shell to sustainable community with parks & renewable integration.</p>
+              <p className="text-sm text-charcoal/70 mt-1">Design & Build from shell to sustainable community with parks & renewable integration.</p>
             </div>
             <div>
               <BeforeAfterSlider
@@ -179,7 +191,7 @@ export default function Home() {
                 <h3 className="font-serif text-[15px] font-medium text-charcoal">Solid → Glass Innovation</h3>
                 <span className="text-xs text-charcoal/40">Frameless • Accra</span>
               </div>
-              <p className="text-sm text-charcoal/60 mt-1">Clean, frameless partitions and curtain walls that maximize light and openness.</p>
+              <p className="text-sm text-charcoal/70 mt-1">Clean, frameless partitions and curtain walls that maximize light and openness.</p>
             </div>
           </div>
           <p className="text-center text-xs text-charcoal/30 mt-6 tracking-wide">Tip: Drag the handle or use ← → keys. Focus the slider and try.</p>
@@ -191,15 +203,19 @@ export default function Home() {
       <CTASection />
 
       {/* Contact */}
-      <section className="section-padding bg-white">
-        <div className="max-w-[1440px] mx-auto">
+      <section className="section-padding bg-white relative overflow-hidden">
+        <TopoLines opacity={0.035} />
+        <GrainOverlay opacity={0.02} />
+        <BlueprintCorner className="-bottom-24 -right-24 opacity-50 hidden lg:block" />
+        <div className="absolute top-0 inset-x-0 h-px bg-charcoal/5" aria-hidden />
+        <div className="relative max-w-[1440px] mx-auto">
           <SectionHeading tag="Get In Touch" title="Start your project today" description="Tell us about your housing, glass, procurement or energy project — our team responds within 24 hours." />
           <div className="grid lg:grid-cols-12 gap-8">
             <div className="lg:col-span-7">
               <ContactForm />
             </div>
             <div className="lg:col-span-5 space-y-6">
-              <div className="bg-cream rounded-[24px] p-6 border border-charcoal/5">
+              <div className="bg-cream rounded-[20px] p-6 border border-charcoal/5">
                 <h3 className="font-serif text-lg font-medium text-charcoal mb-5">Contact Information</h3>
                 <div className="space-y-4">
                   <div className="flex gap-3">
@@ -215,7 +231,7 @@ export default function Home() {
                     <div>
                       <p className="text-xs font-semibold tracking-widest uppercase text-charcoal/40">Phone</p>
                       <a href={`tel:${COMPANY.phone}`} className="text-sm text-charcoal block mt-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded">{COMPANY.phoneFormatted}</a>
-                      <a href={`tel:${COMPANY.phone2}`} className="text-sm text-charcoal/60 block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded">{COMPANY.phone2Formatted}</a>
+                      <a href={`tel:${COMPANY.phone2}`} className="text-sm text-charcoal/70 block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded">{COMPANY.phone2Formatted}</a>
                     </div>
                   </div>
                   <div className="flex gap-3">
@@ -223,14 +239,14 @@ export default function Home() {
                     <div>
                       <p className="text-xs font-semibold tracking-widest uppercase text-charcoal/40">Email</p>
                       <a href={`mailto:${COMPANY.email}`} className="text-sm text-charcoal block mt-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded">{COMPANY.email}</a>
-                      <a href={`mailto:${COMPANY.email2}`} className="text-sm text-charcoal/60 block break-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded">{COMPANY.email2}</a>
+                      <a href={`mailto:${COMPANY.email2}`} className="text-sm text-charcoal/70 block break-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded">{COMPANY.email2}</a>
                     </div>
                   </div>
                 </div>
               </div>
-              <div className="rounded-[24px] overflow-hidden border border-charcoal/5 h-[280px] relative bg-cream">
+              <div className="rounded-[20px] overflow-hidden border border-charcoal/5 h-[280px] relative bg-cream">
                 <Image src="/images/contact-accra.jpg" alt="Abelemkpe area map placeholder" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 480px" />
-                <div className="absolute inset-0 bg-charcoal/20" />
+                <div className="absolute inset-0 bg-charcoal/15" />
                 <div className="absolute bottom-4 left-4 bg-white rounded-full px-4 py-2 text-xs font-semibold text-charcoal shadow-soft flex items-center gap-2">
                   <MapPin size={12} className="text-gold" aria-hidden /> Abelemkpe • GA 135 6916
                 </div>

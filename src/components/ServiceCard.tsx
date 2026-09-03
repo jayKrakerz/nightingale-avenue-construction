@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import type { ServiceItem } from "@/lib/data";
 
@@ -11,69 +12,49 @@ interface ServiceCardProps {
   detailed?: boolean;
 }
 
-export default function ServiceCard({
-  service,
-  index,
-  detailed = false,
-}: ServiceCardProps) {
+export default function ServiceCard({ service, index, detailed = false }: ServiceCardProps) {
   const Icon = service.icon;
   const num = String(index + 1).padStart(2, "0");
   return (
     <motion.div
-      initial={{ opacity: 0, y: 14 }}
+      initial={{ opacity: 0, y: 8 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
-      transition={{ duration: 0.45, delay: index * 0.06, ease: "easeOut" }}
-      className="group relative bg-white rounded-[24px] border border-charcoal/5 overflow-hidden card-premium flex flex-col"
+      transition={{ duration: 0.45, delay: index * 0.04, ease: [0.22, 1, 0.36, 1] }}
+      className="group relative bg-white rounded-[6px] border border-charcoal/10 overflow-hidden flex flex-col"
     >
-      {/* HD Image header */}
-      <div className="relative h-48 overflow-hidden">
-        <Image
-          src={service.image}
-          alt={service.title}
-          fill
-          className="object-cover group-hover:scale-[1.03] transition-transform duration-700"
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-charcoal/55 via-charcoal/10 to-transparent" />
-        <div className="absolute top-4 left-4 w-10 h-10 rounded-xl bg-white/90 backdrop-blur border border-white/40 flex items-center justify-center text-charcoal shadow-soft">
-          <Icon size={18} strokeWidth={1.6} />
+      <div className="absolute top-0 left-0 right-0 h-1 bg-gold z-20" aria-hidden />
+      <div className="relative h-48 overflow-hidden bg-cream">
+        <Image src={service.image} alt={service.title} fill className="object-cover grayscale-[0.08] group-hover:scale-[1.02] transition-transform duration-500" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px" />
+        <div className="absolute inset-0 bg-charcoal/10" aria-hidden />
+        <div className="absolute top-3 left-3 w-8 h-8 rounded-[4px] bg-white border border-charcoal/10 flex items-center justify-center text-charcoal">
+          <Icon size={15} strokeWidth={1.8} />
         </div>
-        <span className="absolute top-4 right-4 bg-charcoal text-white text-[11px] font-semibold tracking-widest uppercase px-2.5 py-1 rounded-full">
-          {num}
-        </span>
+        <span className="absolute top-3 right-3 bg-charcoal text-white text-[10px] font-bold tracking-widest uppercase px-2 py-1 rounded-[4px]">{num}</span>
       </div>
 
-      <div className="p-7 flex flex-col flex-1">
-        <h3 className="font-serif text-[19px] font-medium leading-tight text-charcoal mb-2 pr-2">
-          {service.title}
-        </h3>
-        <p className="text-[13.5px] leading-relaxed text-charcoal/60 mb-5 line-clamp-3 min-h-[60px]">
-          {detailed ? service.description : service.shortDescription}
-        </p>
+      <div className="p-6 flex flex-col flex-1">
+        <h3 className="font-archivo font-extrabold text-[15px] leading-tight tracking-[-0.01em] text-charcoal uppercase">{service.title}</h3>
+        <div className="mt-2 h-px w-8 bg-gold" aria-hidden />
+        <p className="text-[13px] leading-[1.6] text-charcoal/60 mt-3 line-clamp-3 min-h-[62px]">{detailed ? service.description : service.shortDescription}</p>
 
         {detailed ? (
-          <ul className="space-y-2.5 mb-2">
+          <ul className="space-y-2 mt-4 mb-1">
             {service.features.slice(0, 5).map((feature) => (
-              <li key={feature} className="flex gap-2.5 text-[13px] leading-relaxed text-charcoal/70">
-                <span className="mt-1.5 w-1 h-1 rounded-full bg-gold shrink-0" />
-                {feature}
+              <li key={feature} className="flex gap-2 text-[12px] leading-relaxed text-charcoal/70">
+                <span className="mt-[7px] w-1 h-1 bg-gold shrink-0 rounded-[1px]" aria-hidden /> {feature}
               </li>
             ))}
           </ul>
         ) : (
-          <div className="mt-auto flex items-center justify-between pt-5 border-t border-charcoal/5">
-            <span className="text-[11px] font-semibold tracking-widest uppercase text-charcoal/40 group-hover:text-charcoal transition-colors">
-              Explore
+          <Link href="/services" className="mt-auto flex items-center justify-between pt-4 border-t border-charcoal/10 group/link focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded-[4px] -mx-1 px-1">
+            <span className="text-[11px] font-bold tracking-[0.08em] uppercase text-charcoal group-hover:text-gold transition-colors">Explore</span>
+            <span className="w-8 h-8 rounded-[4px] bg-charcoal text-white flex items-center justify-center group-hover:bg-gold transition-colors">
+              <ArrowUpRight size={12} strokeWidth={2.2} />
             </span>
-            <span className="w-9 h-9 rounded-full bg-charcoal text-white flex items-center justify-center group-hover:bg-gold transition-colors">
-              <ArrowUpRight size={14} />
-            </span>
-          </div>
+          </Link>
         )}
       </div>
-      {/* Gold hairline */}
-      <div className="absolute bottom-0 left-7 right-7 h-px bg-gold/0 group-hover:bg-gold/30 transition-colors duration-500" />
     </motion.div>
   );
 }

@@ -55,7 +55,7 @@ export default function HeroSlider() {
           />
         ))}
       </div>
-      <div className="absolute bottom-6 right-6 lg:right-8 z-20 hidden md:flex items-center gap-2 text-white/60 text-xs tracking-widest uppercase">
+      <div className="absolute bottom-6 right-6 lg:right-8 z-20 hidden md:flex items-center gap-2 text-white/70 text-xs tracking-widest uppercase">
         <span className="w-6 h-px bg-white/30" /> {SLIDES[i].label}
       </div>
     </div>

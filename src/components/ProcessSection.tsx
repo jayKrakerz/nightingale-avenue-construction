@@ -3,12 +3,15 @@
 import { motion } from "framer-motion";
 import { PROCESS_STEPS } from "@/lib/data";
 import SectionHeading from "./SectionHeading";
+import { DotGrid, BlueprintCorner } from "./SectionTexture";
 
 export default function ProcessSection() {
   return (
-    <section className="section-padding bg-white relative">
+    <section className="section-padding bg-white relative overflow-hidden">
+      <DotGrid opacity={0.025} />
+      <BlueprintCorner className="top-8 -left-24 hidden xl:block opacity-60" />
       <div className="absolute top-0 inset-x-0 h-px bg-charcoal/5" />
-      <div className="max-w-[1440px] mx-auto">
+      <div className="relative max-w-[1440px] mx-auto">
         <SectionHeading
           tag="Our Process"
           title="Precision from concept to handover"
@@ -23,21 +26,20 @@ export default function ProcessSection() {
             return (
               <motion.div
                 key={step.number}
-                initial={{ opacity: 0, y: 14 }}
+                initial={{ opacity: 0, y: 8 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
-                transition={{ duration: 0.45, delay: i * 0.06 }}
-                className="relative bg-cream rounded-[20px] p-7 md:p-8 border border-charcoal/5 overflow-hidden group hover:bg-white hover:border-gold/15 transition-all duration-500"
+                transition={{ duration: 0.45, delay: i * 0.04, ease: [0.22, 1, 0.36, 1] }}
+                className="relative bg-white rounded-[6px] p-6 border border-charcoal/10 overflow-hidden group hover:border-gold/20 transition-colors"
               >
-                <span className="absolute -top-1 -right-2 font-serif text-[64px] font-light leading-none text-charcoal/[0.04] group-hover:text-gold/[0.07] transition-colors">
-                  {step.number}
-                </span>
+                <div className="absolute top-0 left-0 right-0 h-1 bg-gold/60 group-hover:bg-gold transition-colors" aria-hidden />
+                <span className="absolute -top-1 -right-1 font-archivo font-extrabold text-[48px] leading-none text-charcoal/[0.04]">{step.number}</span>
                 <div className="relative">
-                  <div className="w-11 h-11 rounded-xl bg-white border border-charcoal/5 flex items-center justify-center text-charcoal group-hover:bg-gold group-hover:text-white group-hover:border-gold transition-all duration-500 mb-5 shadow-soft">
-                    <Icon size={18} strokeWidth={1.7} />
+                  <div className="w-10 h-10 rounded-[4px] bg-charcoal flex items-center justify-center text-white mb-4">
+                    <Icon size={16} strokeWidth={1.8} />
                   </div>
-                  <h3 className="font-serif text-[17px] font-medium text-charcoal mb-2">{step.title}</h3>
-                  <p className="text-[13.5px] leading-relaxed text-charcoal/60">{step.description}</p>
+                  <h3 className="font-archivo font-extrabold text-[13px] tracking-[-0.01em] uppercase text-charcoal mb-1.5">{step.title}</h3>
+                  <p className="text-[13px] leading-relaxed text-charcoal/70">{step.description}</p>
                 </div>
               </motion.div>
             );

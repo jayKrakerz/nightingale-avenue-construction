@@ -8,13 +8,14 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
   display: "swap",
 });
 
 const cormorant = Cormorant_Garamond({
   variable: "--font-cormorant",
   subsets: ["latin"],
-  weight: ["300", "500"],
+  weight: ["300", "400", "500", "600", "700"],
   display: "swap",
 });
 

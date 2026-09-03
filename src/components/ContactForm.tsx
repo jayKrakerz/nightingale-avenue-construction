@@ -21,11 +21,11 @@ export default function ContactForm({ detailed = false }: { detailed?: boolean }
     setFormData({ name: "", company: "", phone: "", whatsapp: "", email: "", service: "", location: "", budget: "", startDate: "", message: "" });
   };
 
-  const inputCls = "w-full px-4 py-3.5 rounded-2xl border border-charcoal/10 bg-white text-charcoal text-[14px] placeholder:text-charcoal/30 focus:outline-none focus:ring-2 focus:ring-gold/20 focus:border-gold/40 transition-all";
-  const labelCls = "block text-[11px] font-semibold tracking-widest uppercase text-charcoal/50 mb-2";
+  const inputCls = "w-full px-4 py-3.5 rounded-xl border border-charcoal/10 bg-white text-charcoal text-[14px] placeholder:text-charcoal/30 focus:outline-none focus:ring-2 focus:ring-gold/20 focus:border-gold/40 transition-colors";
+  const labelCls = "block text-[11px] font-semibold tracking-[0.14em] uppercase text-charcoal/50 mb-2";
 
   return (
-    <form onSubmit={handleSubmit} className="bg-white rounded-[28px] border border-charcoal/5 shadow-soft p-6 md:p-8 space-y-5">
+    <form onSubmit={handleSubmit} className="bg-white rounded-[20px] border border-charcoal/5 shadow-soft p-6 md:p-8 space-y-5">
       <div className="flex items-center gap-3 pb-2 border-b border-charcoal/5">
         <div className="w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center text-gold"><Send size={16} /></div>
         <div>
