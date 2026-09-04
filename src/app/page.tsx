@@ -24,6 +24,7 @@ import ContactForm from "@/components/ContactForm";
 import { TrustMarquee } from "@/components/Marquee";
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 import AxialHero from "@/components/AxialHero";
+import FAQAccordion from "@/components/FAQAccordion";
 import { DotGrid, BlueprintCorner, ArchLines, WaveLines, TopoLines, GrainOverlay } from "@/components/SectionTexture";
 import { SERVICES, PROJECTS, COMPANY } from "@/lib/data";
 
@@ -35,7 +36,7 @@ export default function Home() {
       {/* Single subtle marquee only */}
       <TrustMarquee />
 
-      {/* Intro — hardened: slab, 6px, tight type, no pills */}
+      {/* Intro - hardened: slab, 6px, tight type, no pills */}
       <section className="section-padding bg-cream relative overflow-hidden border-t border-charcoal/5">
         <div className="absolute top-0 inset-x-0 h-px bg-gold/20" aria-hidden />
         {/* technical rule, not dotgrid */}
@@ -52,17 +53,17 @@ export default function Home() {
               </h2>
               <div className="mt-4 h-1 w-12 bg-gold" aria-hidden />
               <div className="mt-5 space-y-3.5 text-[14px] leading-[1.65] text-charcoal/70 font-medium max-w-prose">
-                <p><strong className="text-charcoal font-bold">{COMPANY.fullName}</strong> — wholly owned Ghanaian, incorporated <strong className="text-charcoal font-bold">{COMPANY.incorporated}</strong>. Real estate & civil engineering, built on site.</p>
-                <p>Social housing blueprint for nurses, doctors, teachers and security personnel — solid communities, hard costs controlled, no render promises.</p>
-                <p className="text-charcoal font-semibold text-[13px] tracking-wide">FRAMLESS & ALUMINIUM GLASS • PPA-REGISTERED PROCUREMENT • RENEWABLE ENERGY • IT & COMMUNICATIONS</p>
+                <p><strong className="text-charcoal font-bold">{COMPANY.fullName}</strong> - wholly owned Ghanaian, incorporated <strong className="text-charcoal font-bold">{COMPANY.incorporated}</strong>. Real estate & civil engineering, built on site.</p>
+                <p>Social housing blueprint for nurses, doctors, teachers and security personnel - solid communities, hard costs controlled, no render promises.</p>
+                <p className="text-charcoal font-semibold text-[13px] tracking-wide">FRAMLESS & ALUMINIUM GLASS • PPA-REGISTERED PROCUREMENT • PLUMBING • ELECTRICAL • CCTV</p>
               </div>
-              {/* Spec strip — not pills */}
+              {/* Spec strip - not pills */}
               <div className="mt-6 grid grid-cols-2 border border-charcoal/10 rounded-[6px] overflow-hidden bg-white">
                 {[
                   ["100%","GHANAIAN OWNED"],
                   ["PPA","REGISTERED"],
                   ["TAX / SSNIT","COMPLIANT"],
-                  ["2024","ESTABLISHED"],
+                  ["2020","ESTABLISHED"],
                 ].map(([v,l]) => (
                   <div key={l} className="flex items-center gap-3 px-4 py-3 border-charcoal/10 border-r border-b last:border-r-0 even:border-r-0 nth-[3]:border-b-0 nth-[4]:border-b-0">
                     <span className="font-archivo font-extrabold text-gold text-[14px] leading-none">{v}</span>
@@ -77,14 +78,14 @@ export default function Home() {
                 <div className="aspect-[4/3] rounded-[4px] overflow-hidden relative bg-charcoal">
                   <Image src="/images/about-community.jpg" alt="Nightingale Avenue Construction community aerial view" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 520px" />
                   <div className="absolute bottom-0 left-0 right-0 h-px bg-gold" aria-hidden />
-                  <div className="absolute bottom-3 left-3 bg-white text-charcoal text-[11px] font-bold tracking-wide px-2.5 py-1 rounded-[4px] border border-charcoal/10">ABELEMKPE, ACCRA</div>
-                  <div className="absolute bottom-3 right-3 bg-charcoal text-white text-[11px] font-bold tracking-wide px-2.5 py-1 rounded-[4px]">GA 135 6916</div>
+                  <div className="absolute bottom-3 left-3 bg-white text-charcoal text-[11px] font-bold tracking-wide px-2.5 py-1 rounded-[4px] border border-charcoal/10">SPINTEX, ACCRA</div>
+                  <div className="absolute bottom-3 right-3 bg-charcoal text-white text-[11px] font-bold tracking-wide px-2.5 py-1 rounded-[4px]">Spintex</div>
                 </div>
                 <div className="grid grid-cols-3 gap-2 mt-3">
                   {[
                     { icon: Award, label: "PPA", sub: "Registered" },
                     { icon: ShieldCheck, label: "SSNIT", sub: "Certified" },
-                    { icon: Sparkles, label: "NAC", sub: "Since 2024" },
+                    { icon: Sparkles, label: "NAC", sub: "Since 2020" },
                   ].map((b) => (
                     <div key={b.label} className="bg-cream rounded-[4px] p-2.5 text-center border border-charcoal/10">
                       <b.icon size={13} className="mx-auto text-charcoal mb-1" aria-hidden />
@@ -99,7 +100,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Services — grid on desktop, swipe hint mobile */}
+      {/* Services - grid on desktop, swipe hint mobile */}
       <section className="section-padding bg-white relative overflow-hidden">
         <DotGrid opacity={0.025} />
         <div className="absolute top-12 right-0 w-[420px] h-[420px] rounded-full bg-gold/5 blur-3xl pointer-events-none" aria-hidden />
@@ -108,7 +109,7 @@ export default function Home() {
           <SectionHeading
             tag="Our Solutions"
             title="Five pillars. One trusted partner."
-            description="Construction, glass innovation, procurement & logistics, renewable energy and IT — delivering value from sourcing to handover."
+            description="Construction, glass innovation, procurement & logistics, plumbing - delivering value from sourcing to handover."
           />
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {SERVICES.map((s, i) => (
@@ -125,7 +126,7 @@ export default function Home() {
 
       <StatsSection />
 
-      {/* Projects — grid */}
+      {/* Projects - grid */}
       <section className="section-padding bg-cream relative overflow-hidden">
         <DotGrid opacity={0.03} />
         <TopoLines opacity={0.04} />
@@ -158,7 +159,7 @@ export default function Home() {
           <SectionHeading
             tag="Before / After"
             title="See the transformation"
-            description="Drag to compare — bare structure to finishing, shell to glass. Craftsmanship you can feel."
+            description="Drag to compare - bare structure to finishing, shell to glass. Craftsmanship you can feel."
           />
           <div className="grid lg:grid-cols-2 gap-6 md:gap-8">
             <div>
@@ -172,10 +173,10 @@ export default function Home() {
                 initial={58}
               />
               <div className="mt-3 flex items-center justify-between">
-                <h3 className="font-serif text-[15px] font-medium text-charcoal">Staircase — Before → After</h3>
+                <h3 className="font-serif text-[15px] font-medium text-charcoal">Staircase - Before → After</h3>
                 <span className="text-xs text-charcoal/40">Renovation • Accra</span>
               </div>
-              <p className="text-sm text-charcoal/70 mt-1">Raw concrete to finished balustrade — precise glass and metal craftsmanship.</p>
+              <p className="text-sm text-charcoal/70 mt-1">Raw concrete to finished balustrade - precise glass and metal craftsmanship.</p>
             </div>
             <div>
               <BeforeAfterSlider
@@ -188,10 +189,10 @@ export default function Home() {
                 initial={62}
               />
               <div className="mt-3 flex items-center justify-between">
-                <h3 className="font-serif text-[15px] font-medium text-charcoal">Pathway — Before → After</h3>
+                <h3 className="font-serif text-[15px] font-medium text-charcoal">Pathway - Before → After</h3>
                 <span className="text-xs text-charcoal/40">Paving • Accra</span>
               </div>
-              <p className="text-sm text-charcoal/70 mt-1">From bare ground to paved walkway — durable, drainage-ready finishing.</p>
+              <p className="text-sm text-charcoal/70 mt-1">From bare ground to paved walkway - durable, drainage-ready finishing.</p>
             </div>
           </div>
           <p className="text-center text-xs text-charcoal/30 mt-6 tracking-wide">Tip: Drag the handle or use ← → keys. Focus the slider and try.</p>
@@ -200,6 +201,13 @@ export default function Home() {
 
       <ProcessSection />
       <Testimonials />
+      {/* FAQ - homepage teaser */}
+      <section className="section-padding bg-cream relative border-t border-charcoal/5">
+        <div className="max-w-[900px] mx-auto">
+          <SectionHeading tag="FAQ" title="Questions, answered" description="Housing, glass, procurement - hard answers before you call." />
+          <FAQAccordion limit={6} />
+        </div>
+      </section>
       <CTASection />
 
       {/* Contact */}
@@ -209,7 +217,7 @@ export default function Home() {
         <BlueprintCorner className="-bottom-24 -right-24 opacity-50 hidden lg:block" />
         <div className="absolute top-0 inset-x-0 h-px bg-charcoal/5" aria-hidden />
         <div className="relative max-w-[1440px] mx-auto">
-          <SectionHeading tag="Get In Touch" title="Start your project today" description="Tell us about your housing, glass, procurement or energy project — our team responds within 24 hours." />
+          <SectionHeading tag="Get In Touch" title="Start your project today" description="Tell us about your housing, glass, procurement or energy project - our team responds within 24 hours." />
           <div className="grid lg:grid-cols-12 gap-8">
             <div className="lg:col-span-7">
               <ContactForm />
@@ -245,10 +253,10 @@ export default function Home() {
                 </div>
               </div>
               <div className="rounded-[20px] overflow-hidden border border-charcoal/5 h-[280px] relative bg-cream">
-                <Image src="/images/contact-accra.jpg" alt="Abelemkpe area map placeholder" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 480px" />
+                <Image src="/images/contact-accra.jpg" alt="Spintex area map placeholder" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 480px" />
                 <div className="absolute inset-0 bg-charcoal/15" />
                 <div className="absolute bottom-4 left-4 bg-white rounded-full px-4 py-2 text-xs font-semibold text-charcoal shadow-soft flex items-center gap-2">
-                  <MapPin size={12} className="text-gold" aria-hidden /> Abelemkpe • GA 135 6916
+                  <MapPin size={12} className="text-gold" aria-hidden /> Spintex • Baatsona
                 </div>
               </div>
             </div>

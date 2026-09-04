@@ -66,7 +66,7 @@ export default function Navbar() {
             </div>
             <div className="hidden sm:block">
               <span className={`font-archivo font-extrabold text-[15px] tracking-[-0.01em] leading-none uppercase block transition-colors ${scrolled ? "text-charcoal" : "text-white"}`}>Nightingale Avenue</span>
-              <span className={`text-[10px] font-bold tracking-[0.14em] uppercase transition-colors ${scrolled ? "text-charcoal/70" : "text-white/70"}`}>Limited — NAC</span>
+              <span className={`text-[10px] font-bold tracking-[0.14em] uppercase transition-colors ${scrolled ? "text-charcoal/70" : "text-white/70"}`}>Limited - NAC</span>
             </div>
           </Link>
 
@@ -110,7 +110,7 @@ export default function Navbar() {
         </nav>
       </motion.header>
 
-      {/* Mobile drawer — outside header flow, covers viewport */}
+      {/* Mobile drawer - outside header flow, covers viewport */}
       <div
         id="mobile-nav"
         aria-hidden={!isOpen}

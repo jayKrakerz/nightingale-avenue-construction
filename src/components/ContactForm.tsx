@@ -7,7 +7,7 @@ import { SERVICES } from "@/lib/data";
 export default function ContactForm({ detailed = false }: { detailed?: boolean }) {
   const [status, setStatus] = useState<"idle" | "success">("idle");
   const [formData, setFormData] = useState({
-    name: "", company: "", phone: "", whatsapp: "", email: "", service: "", location: "", budget: "", startDate: "", message: "",
+    name: "", company: "", phone: "", whatsapp: "", email: "", service: "", location: "", startDate: "", message: "",
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -18,7 +18,7 @@ export default function ContactForm({ detailed = false }: { detailed?: boolean }
     e.preventDefault();
     setStatus("success");
     setTimeout(() => setStatus("idle"), 5000);
-    setFormData({ name: "", company: "", phone: "", whatsapp: "", email: "", service: "", location: "", budget: "", startDate: "", message: "" });
+    setFormData({ name: "", company: "", phone: "", whatsapp: "", email: "", service: "", location: "", startDate: "", message: "" });
   };
 
   const inputCls = "w-full px-4 py-3.5 rounded-xl border border-charcoal/10 bg-white text-charcoal text-[14px] placeholder:text-charcoal/30 focus:outline-none focus:ring-2 focus:ring-gold/20 focus:border-gold/40 transition-colors";
@@ -74,19 +74,8 @@ export default function ContactForm({ detailed = false }: { detailed?: boolean }
       </div>
 
       {detailed && (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-          <div>
-            <label className={labelCls}>Estimated Budget</label>
-            <select name="budget" value={formData.budget} onChange={handleChange} className={`${inputCls} appearance-none`}>
-              <option value="">Select budget range</option>
-              <option value="under-50k">Under GHS 500,000</option>
-              <option value="50k-200k">GHS 500,000 - 2M</option>
-              <option value="200k-500k">GHS 2M - 5M</option>
-              <option value="500k-1m">GHS 5M - 10M</option>
-              <option value="over-1m">Over GHS 10M</option>
-            </select>
-          </div>
-          <div><label className={labelCls}>Desired Start Date</label><input type="date" name="startDate" value={formData.startDate} onChange={handleChange} className={inputCls} /></div>
+        <div>
+          <label className={labelCls}>Desired Start Date</label><input type="date" name="startDate" value={formData.startDate} onChange={handleChange} className={inputCls} />
         </div>
       )}
 

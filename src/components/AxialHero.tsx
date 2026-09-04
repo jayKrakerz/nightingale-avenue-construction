@@ -14,20 +14,20 @@ export default function AxialHero() {
 
   return (
     <section ref={ref} className="relative overflow-hidden bg-charcoal isolate">
-      {/* Hard slab — no gradient wash, flat charcoal */}
+      {/* Hard slab - no gradient wash, flat charcoal */}
       <div className="absolute inset-0 bg-charcoal" aria-hidden />
-      {/* Hairline — 1px brass rule, not glow */}
+      {/* Hairline - 1px brass rule, not glow */}
       <div className="absolute inset-x-0 top-0 h-px bg-gold/30" aria-hidden />
       <div className="absolute inset-x-0 bottom-0 h-px bg-white/5" aria-hidden />
 
-      {/* Blueprint — faint, technical, 90deg, no rotate/spring — single 1px stroke */}
+      {/* Blueprint - faint, technical, 90deg, no rotate/spring - single 1px stroke */}
       <div className="absolute pointer-events-none select-none hidden lg:block" aria-hidden style={{ right: "2%", bottom: "4%", width: "680px", opacity: 0.06 }}>
         <div className="relative w-full aspect-[1.4/1]">
           <Image src="/plan.webp" alt="" fill className="object-contain grayscale contrast-125" sizes="680px" priority={false} />
         </div>
       </div>
 
-      {/* Building — grounded, cropped hard edge, no parallax float */}
+      {/* Building - grounded, cropped hard edge, no parallax float */}
       <div className="absolute right-0 bottom-0 z-0 pointer-events-none select-none hidden md:block" aria-hidden>
         <div className="relative w-[640px] lg:w-[700px] h-[560px] lg:h-[640px]">
           <Image src="/building.webp" alt="" fill className="object-contain object-bottom grayscale-[0.15] contrast-110" priority sizes="700px" />
@@ -39,12 +39,12 @@ export default function AxialHero() {
         </div>
       </div>
 
-      {/* Bottom scrim — hard 60% charcoal, not soft gradient */}
+      {/* Bottom scrim - hard 60% charcoal, not soft gradient */}
       <div className="absolute inset-0 z-[1] bg-gradient-to-t from-charcoal via-charcoal/60 to-transparent pointer-events-none md:hidden" aria-hidden />
 
       <div className="relative z-10 max-w-[1440px] mx-auto px-6 lg:px-8">
         <motion.div style={{ y: contentY, opacity: contentOpacity }} className="pt-[104px] sm:pt-[120px] md:pt-[168px] lg:pt-[192px] xl:pt-[216px] pb-[64px] md:pb-[72px] grid lg:grid-cols-12 gap-8 items-start">
-          {/* Header — 8col */}
+          {/* Header - 8col */}
           <motion.div
             initial="hidden"
             animate="visible"
@@ -66,7 +66,7 @@ export default function AxialHero() {
             </motion.h1>
 
             <motion.p variants={{ hidden: { opacity: 0 }, visible: { opacity: 1, transition: { duration: 0.45 } } }} className="mt-5 text-white/70 text-[14px] md:text-[15px] leading-[1.6] max-w-[480px] font-medium">
-              Ghanaian-owned since January 2024 — affordable housing, glass systems, procurement & logistics, renewable energy and IT. Built on site, not slides.
+              Ghanaian-owned since March 2020 - affordable housing, glass systems, procurement & logistics and plumbing. Built on site, not slides.
             </motion.p>
 
             <motion.div variants={{ hidden: { opacity: 0, y: 8 }, visible: { opacity: 1, y: 0, transition: { duration: 0.4 } } }} className="mt-8 flex flex-wrap items-center gap-3">
@@ -79,17 +79,17 @@ export default function AxialHero() {
             </motion.div>
 
             <motion.div variants={{ hidden: { opacity: 0 }, visible: { opacity: 1, transition: { duration: 0.4, delay: 0.12 } } }} className="mt-7 flex items-center gap-3 text-[11px] font-semibold tracking-wide text-white/50 border-t border-white/10 pt-4 max-w-[420px]">
-              <span className="w-2 h-2 bg-emerald-400 rounded-[1px]" aria-hidden /> PPA REGISTERED <span className="text-white/20">/</span> TAX & SSNIT COMPLIANT <span className="text-white/20">/</span> GA 135 6916
+              <span className="w-2 h-2 bg-emerald-400 rounded-[1px]" aria-hidden /> PPA REGISTERED <span className="text-white/20">/</span> TAX & SSNIT COMPLIANT <span className="text-white/20">/</span> Spintex, Accra
             </motion.div>
           </motion.div>
 
-          {/* Right — 4col offset */}
+          {/* Right - 4col offset */}
           <div className="lg:col-span-4 flex flex-col lg:items-end lg:pt-2 w-full">
             <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1], delay: 0.28 }} className="relative w-full sm:max-w-[380px] lg:w-[380px] self-start lg:self-auto">
               <div className="relative overflow-hidden rounded-[6px] bg-white border border-charcoal/10 p-5 flex gap-4">
                 <div className="absolute top-0 left-0 w-full h-1 bg-gold" aria-hidden />
                 <div className="flex-1 min-w-0 pt-1">
-                  <div className="text-[10px] font-bold tracking-[0.12em] uppercase text-charcoal/40">Featured — Accra</div>
+                  <div className="text-[10px] font-bold tracking-[0.12em] uppercase text-charcoal/40">Featured - Accra</div>
                   <h3 className="font-serif font-medium text-charcoal text-[15px] leading-tight mt-1">Affordable Housing</h3>
                   <div className="font-archivo font-extrabold text-charcoal text-[28px] leading-none mt-2">
                     500 <span className="text-[12px] font-bold tracking-wide text-gold">UNITS</span>

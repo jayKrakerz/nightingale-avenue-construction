@@ -30,7 +30,7 @@ export default function CTASection() {
             <h2 className="font-serif font-light text-[28px] md:text-[32px] leading-[0.95] tracking-tight text-white">
               Have a project in mind? <span className="italic font-normal text-gold">Let&apos;s build it together.</span>
             </h2>
-            <p className="mt-3 text-white/70 text-[14px] leading-relaxed max-w-xl mx-auto lg:mx-0">From affordable housing to glass façades and nationwide logistics — PPA-registered, Ghanaian-built.</p>
+            <p className="mt-3 text-white/70 text-[14px] leading-relaxed max-w-xl mx-auto lg:mx-0">From affordable housing to glass façades and nationwide logistics - PPA-registered, Ghanaian-built.</p>
           </div>
           <div className="shrink-0 flex flex-col sm:flex-row gap-3 w-full lg:w-auto">
             <Link href="/contact" className="relative overflow-hidden inline-flex items-center justify-center gap-2 bg-gold hover:bg-gold-light text-charcoal px-6 py-3 rounded-[6px] font-archivo font-bold text-[13px] tracking-wide uppercase transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold shimmer">

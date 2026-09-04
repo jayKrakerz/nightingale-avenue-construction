@@ -7,7 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 const SLIDES = [
   {
     src: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=2070&auto=format&fit=crop",
-    label: "Construction • Abelemkpe, Accra",
+    label: "Construction • Spintex, Accra",
   },
   {
     src: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop",

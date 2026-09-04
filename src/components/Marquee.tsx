@@ -63,11 +63,11 @@ export default function Marquee({
 export function TrustMarquee() {
   const items = [
     "PPA REGISTERED",
-    "TAX CLEARANCE — ACT 915",
-    "SSNIT CERTIFIED — ACT 766",
+    "TAX CLEARANCE - ACT 915",
+    "SSNIT CERTIFIED - ACT 766",
     "100% GHANAIAN OWNED",
-    "EST. JAN 2024",
-    "ABELEMKPE • ACCRA",
+    "EST. MAR 2020",
+    "SPINTEX • ACCRA",
     "500+ UNITS BLUEPRINT",
   ];
   return <Marquee items={items} variant="subtle" speed={38} />;

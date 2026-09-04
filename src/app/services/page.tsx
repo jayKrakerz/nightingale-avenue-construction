@@ -11,7 +11,7 @@ import { SERVICES } from "@/lib/data";
 export default function ServicesPage() {
   return (
     <>
-      {/* Hero — with plan on right */}
+      {/* Hero - with plan on right */}
       <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 bg-charcoal overflow-hidden isolate">
         <div className="hidden lg:block absolute right-0 bottom-0 w-[620px] opacity-[0.14] pointer-events-none select-none" aria-hidden>
           <div className="relative w-full aspect-[1.4/1]">
@@ -27,17 +27,17 @@ export default function ServicesPage() {
           <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }} className="max-w-3xl">
             <div className="inline-flex items-center gap-3 mb-5">
               <span className="w-8 h-px bg-gold/60 hidden sm:block" aria-hidden />
-              <span className="font-archivo font-semibold text-gold text-[11px] tracking-[0.16em] uppercase">Our Solutions — 5 Pillars</span>
+              <span className="font-archivo font-semibold text-gold text-[11px] tracking-[0.16em] uppercase">Our Solutions - 5 Pillars</span>
             </div>
             <h1 className="font-serif font-light text-[38px] md:text-[50px] lg:text-[56px] leading-[0.9] tracking-tight text-white">
               Solutions built <span className="italic font-normal text-gold">around Ghana&apos;s Needs</span>
             </h1>
-            <p className="mt-4 text-white/70 text-[14px] md:text-[15px] leading-[1.6] max-w-xl font-medium">Construction & affordable housing, frameless & aluminium glass, procurement & logistics (PPA-registered), renewable energy and IT — tailored, transparent and technology-driven.</p>
+            <p className="mt-4 text-white/70 text-[14px] md:text-[15px] leading-[1.6] max-w-xl font-medium">Construction & affordable housing, frameless & aluminium glass, procurement & logistics (PPA-registered), plumbing - tailored, transparent and technology-driven.</p>
           </motion.div>
         </div>
       </section>
 
-      {/* Detailed Services — alternating with textures */}
+      {/* Detailed Services - alternating with textures */}
       {SERVICES.map((service, i) => {
         const Icon = service.icon;
         const isEven = i % 2 === 0;

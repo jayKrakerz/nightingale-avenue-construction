@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     template: "%s | NAC - Nightingale Avenue Construction",
   },
   description:
-    "Nightingale Avenue Construction — wholly owned Ghanaian solutions provider since January 2024. Construction & affordable housing, glass innovation (frameless & aluminium), procurement & logistics (PPA registered), renewable energy and IT & communications. No. 5 Nii Lomo Tackie Link, Abelemkpe, Accra.",
+    "Nightingale Avenue Construction - wholly owned Ghanaian solutions provider since March 2020. Construction & affordable housing, glass innovation (frameless & aluminium), procurement & logistics (PPA registered) and plumbing. 69 Mango Street, Blue Plaza, Baatsona Total, Spintex, Accra.",
   keywords: [
     "NAC",
     "Nightingale Avenue Construction",
@@ -44,13 +44,13 @@ export const metadata: Metadata = {
     "curtain wall Ghana",
     "procurement logistics Ghana",
     "PPA registered supplier Ghana",
-    "renewable energy Ghana",
-    "IT solutions Ghana",
+    "plumbing Ghana",
+    "architectural plans BOQ Ghana",
   ],
   openGraph: {
     title: "Nightingale Avenue Construction | Solutions Provider in Ghana",
     description:
-      "Construction, glass innovation, procurement & logistics, renewable energy and IT — wholly owned Ghanaian company delivering quality housing for all since 2024.",
+      "Construction, glass innovation, procurement & logistics and plumbing - wholly owned Ghanaian company delivering quality housing for all since March 2020.",
     type: "website",
     locale: "en_GH",
     siteName: "Nightingale Avenue Construction",

@@ -19,11 +19,11 @@ export default function Footer() {
               </div>
               <div>
                 <span className="font-archivo font-extrabold text-white text-[16px] tracking-[-0.01em] uppercase leading-none block">Nightingale Avenue</span>
-                <span className="text-gold text-[10px] tracking-[0.14em] uppercase font-bold">Construction — NAC</span>
+                <span className="text-gold text-[10px] tracking-[0.14em] uppercase font-bold">Construction - NAC</span>
               </div>
             </Link>
             <p className="text-sm leading-relaxed text-white/70 max-w-md mb-6 font-medium">
-              Wholly owned Ghanaian solutions provider since Jan 2024. Construction & affordable housing, glass innovation, procurement & logistics, renewable energy and IT.
+              Wholly owned Ghanaian solutions provider since Mar 2020. Construction & affordable housing, glass innovation, procurement & logistics, plumbing.
             </p>
             <div className="inline-flex items-center gap-2 text-xs font-bold tracking-wide uppercase px-3 py-1.5 rounded-[4px] bg-white/5 border border-white/10 text-white/70">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" /> PPA Registered • Tax & SSNIT Compliant
@@ -53,7 +53,7 @@ export default function Footer() {
           </div>
 
           <div className="lg:col-span-3">
-            <h4 className="text-white text-xs font-semibold tracking-widest uppercase mb-5">Abelemkpe, Accra</h4>
+            <h4 className="text-white text-xs font-semibold tracking-widest uppercase mb-5">Spintex, Accra</h4>
             <ul className="space-y-3.5">
               <li className="flex gap-3 text-sm text-white/70"><MapPin size={16} className="text-gold mt-0.5 shrink-0" />{COMPANY.address}</li>
               <li className="flex gap-3 text-sm"><Phone size={16} className="text-gold shrink-0" /><a href={`tel:${COMPANY.phone}`} className="text-white/70 hover:text-white">{COMPANY.phoneFormatted} / {COMPANY.phone2Formatted}</a></li>
@@ -74,7 +74,7 @@ export default function Footer() {
         </div>
 
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-6">
-          <p className="text-xs text-white/30">© {new Date().getFullYear()} {COMPANY.fullName}. All Rights Reserved. — Crafted in Accra</p>
+          <p className="text-xs text-white/30">© {new Date().getFullYear()} {COMPANY.fullName}. All Rights Reserved. - Crafted in Accra</p>
           <div className="flex gap-6 text-xs text-white/30">
             <a href="#" className="hover:text-white/70">Privacy</a>
             <a href="#" className="hover:text-white/70">Terms</a>

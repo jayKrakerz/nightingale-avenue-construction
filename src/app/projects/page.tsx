@@ -68,7 +68,7 @@ export default function ProjectsPage() {
 
   return (
     <>
-      {/* Hero — with plan on right */}
+      {/* Hero - with plan on right */}
       <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 bg-charcoal overflow-hidden isolate">
         <div className="hidden lg:block absolute right-0 bottom-0 w-[620px] opacity-[0.14] pointer-events-none select-none" aria-hidden>
           <div className="relative w-full aspect-[1.4/1]">
@@ -87,12 +87,12 @@ export default function ProjectsPage() {
               <span className="font-archivo font-semibold text-gold text-[11px] tracking-[0.16em] uppercase">Our Work</span>
             </div>
             <h1 className="font-serif font-light text-[38px] md:text-[50px] lg:text-[56px] leading-[0.9] tracking-tight text-white">Our projects</h1>
-            <p className="mt-4 text-white/70 text-[14px] md:text-[15px] leading-[1.6] max-w-xl font-medium">From 500 affordable units in Accra to Kumasi sustainable community, glass installations and PPA-registered procurement — a showcase of delivery.</p>
+            <p className="mt-4 text-white/70 text-[14px] md:text-[15px] leading-[1.6] max-w-xl font-medium">From 500 affordable units in Accra to Kumasi sustainable community, glass installations and PPA-registered procurement - a showcase of delivery.</p>
           </motion.div>
         </div>
       </section>
 
-      {/* Filters & Projects — with textures, light cards */}
+      {/* Filters & Projects - with textures, light cards */}
       <section className="section-padding bg-white relative overflow-hidden">
         <TopoLines opacity={0.035} />
         <div className="absolute top-0 inset-x-0 h-px bg-charcoal/5" aria-hidden />

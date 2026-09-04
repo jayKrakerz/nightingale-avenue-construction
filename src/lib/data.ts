@@ -31,13 +31,13 @@ export const COMPANY = {
   whatsapp: "233596327400",
   email: "sales@nightingaleavenueconstruction.com",
   email2: "info@nightingaleavenueconstruction.com",
-  address: "No. 5 Nii Lomo Tackie Link, Abelemkpe, Accra - GA 135 6916",
+  address: "69 Mango Street, Blue Plaza, Baatsona Total, Spintex, Accra",
   website: "www.nightingaleavenueconstruction.com",
   websiteUrl: "https://www.nightingaleavenueconstruction.com",
   businessHours: "Mon – Fri: 8:00 AM – 6:00 PM",
-  tagline: "Solutions provider in construction, glass innovation, procurement & logistics, renewable energy and IT",
+  tagline: "Solutions provider in construction, glass innovation, procurement & logistics and plumbing",
   heroTagline: "Quality Housing for All",
-  incorporated: "January 2024",
+  incorporated: "March 2020",
   ownership: "Wholly Owned Ghanaian Company",
   whatsappMessage:
     "Hello Nightingale Avenue Construction, I would like to discuss a project.",
@@ -69,18 +69,18 @@ export interface ServiceItem {
 export const SERVICES: ServiceItem[] = [
   {
     icon: Building2,
-    title: "Construction & Real Estate",
+    title: "Construction & Renovation",
     slug: "construction",
     shortDescription:
-      "Affordable housing, contemporary communities and design & build projects across Ghana.",
+      "Full-scope building - renovation, plumbing, painting, electrical, CCTV, plastering and BOQ-driven delivery.",
     description:
-      "Nightingale Avenue Construction is recognized for excellence in real estate and civil engineering. Incorporated in January 2024, we deliver quality, affordable housing tailored to middle and high-income earners and essential public-sector workers. From contemporary communities with premium amenities to sustainable, culturally-tailored developments, our design & build expertise covers roads, drainage, and full infrastructure delivery.",
+      "Nightingale Avenue Construction is recognized for excellence in real estate and civil engineering. Incorporated in March 2020, we deliver quality, affordable housing and complete building services - renovation, plumbing, painting, plastering, electrical, CCTV & security, architectural plans and BOQ. From contemporary communities to roads and drainage, we deliver end-to-end with Ghanaian craftsmanship.",
     features: [
       "Affordable housing - 500 units blueprint in Accra",
-      "Sustainable communities with parks & renewable energy (Kumasi model)",
-      "Renovation of public-sector worker housing",
+      "Renovation, plumbing, painting, plastering - full refurbishment",
+      "Electrical, CCTV & security systems installation",
+      "Architectural plans & BOQ preparation",
       "Roads, drainage & infrastructure for new residential areas",
-      "Contemporary, culturally-tailored community design",
       "Design & Build - end-to-end project delivery",
     ],
     image: "/images/construction.jpg",
@@ -92,7 +92,7 @@ export const SERVICES: ServiceItem[] = [
     shortDescription:
       "Minimalist frameless glass for partitions, showers, balustrades, facades and more.",
     description:
-      "Clean, minimalist glass solutions with no visible frames or borders, creating open, modern spaces that maximize natural light. Ideal for residential and commercial applications — from partitions and shower enclosures to balustrades, staircases, facades and pool fencing. Your trusted partner in innovative glass construction.",
+      "Clean, minimalist glass solutions with no visible frames or borders, creating open, modern spaces that maximize natural light. Ideal for residential and commercial applications - from partitions and shower enclosures to balustrades, staircases, facades and pool fencing. Your trusted partner in innovative glass construction.",
     features: [
       "Glass partitions & frameless installations",
       "Shower enclosures & screens",
@@ -101,7 +101,7 @@ export const SERVICES: ServiceItem[] = [
       "Pool fencing & glass canopies / roofing",
       "Glass sliding, folding & swing doors",
       "Tempered & laminated safety glass",
-      "Tinted & reflective solar-control glass",
+      "Tinted & reflective glass",
     ],
     image: "/images/glass-frameless.jpg",
   },
@@ -112,7 +112,7 @@ export const SERVICES: ServiceItem[] = [
     shortDescription:
       "Durable aluminium systems for windows, doors, curtain walls and shopfronts.",
     description:
-      "Our aluminium frames offer exceptional durability, corrosion resistance, and a clean modern finish. Available in a variety of profiles and colours to suit any architectural style — ideal for windows, doors, curtain walls and shopfronts in both residential and commercial buildings.",
+      "Our aluminium frames offer exceptional durability, corrosion resistance, and a clean modern finish. Available in a variety of profiles and colours to suit any architectural style - ideal for windows, doors, curtain walls and shopfronts in both residential and commercial buildings.",
     features: [
       "Casement & sliding windows",
       "Swing & sliding doors",
@@ -133,7 +133,7 @@ export const SERVICES: ServiceItem[] = [
     shortDescription:
       "Strategic sourcing, supply chain coordination and responsive logistics nationwide.",
     description:
-      "At Nightingale Avenue Construction, our procurement and logistics operations are built on efficiency, reliability, and strategic sourcing. We ensure seamless acquisition and delivery of goods, materials, and services — with vetted local & international suppliers, technology-driven tracking, real-time visibility, and strict quality assurance before acceptance.",
+      "At Nightingale Avenue Construction, our procurement and logistics operations are built on efficiency, reliability, and strategic sourcing. We ensure seamless acquisition and delivery of goods, materials, and services - with vetted local & international suppliers, technology-driven tracking, real-time visibility, and strict quality assurance before acceptance.",
     features: [
       "Military uniform / furniture equipment & stationery",
       "Medical (non-consumable) & food items / petroleum projects",
@@ -147,40 +147,22 @@ export const SERVICES: ServiceItem[] = [
     image: "/images/procurement.jpg",
   },
   {
-    icon: Sun,
-    title: "Renewable Energy",
-    slug: "renewable-energy",
+    icon: HardHat,
+    title: "Plumbing Services",
+    slug: "plumbing",
     shortDescription:
-      "Green spaces and renewable energy solutions for sustainable communities.",
+      "Professional plumbing - supply, installation, repairs and maintenance for residential and commercial.",
     description:
-      "Powering sustainable communities with renewable energy integration. Our Kumasi sustainable community model features green spaces and renewable energy solutions that reduce operating costs while supporting Ghana's green transition — from solar integration to energy-efficient building design.",
+      "Complete plumbing solutions - from water supply and drainage to repairs and maintenance. We handle pipework, fixtures, water systems and emergency plumbing with certified workmanship and quality materials, integrated with our broader construction delivery.",
     features: [
-      "Solar integration for residential & community projects",
-      "Energy-efficient building design",
-      "Green spaces & sustainable community planning",
-      "Renewable energy for infrastructure & estates",
-      "Solar control glazing (tinted & reflective glass)",
-      "Sustainable, culturally-tailored developments",
+      "Water supply & drainage systems",
+      "Pipework installation & repairs",
+      "Bathroom & kitchen plumbing - fixtures & fittings",
+      "Water tanks & pumping systems",
+      "Drainage, septic & sewage solutions",
+      "Emergency plumbing & maintenance",
     ],
-    image: "/images/renewable.jpg",
-  },
-  {
-    icon: Monitor,
-    title: "IT & Communications Solutions",
-    slug: "it-communications",
-    shortDescription:
-      "ICT equipment, communication systems and technology-driven operations.",
-    description:
-      "Complete IT & Communications solutions — from household ICT and communication equipment to technology-driven procurement and logistics tracking systems that provide real-time visibility and improve decision-making across supply operations.",
-    features: [
-      "ICT & Communication equipment supply",
-      "Technology-driven procurement & logistics systems",
-      "Real-time tracking & operations visibility",
-      "Household & office ICT solutions",
-      "Communication infrastructure support",
-      "Digital tools for project coordination",
-    ],
-    image: "/images/it-communications.jpg",
+    image: "/images/construction.jpg",
   },
 ];
 
@@ -227,15 +209,15 @@ export const PROJECTS: ProjectItem[] = [
     category: "Construction",
     completionYear: "2024",
     description:
-      "Development of a sustainable community featuring green spaces and renewable energy solutions.",
+      "Development of a sustainable community featuring green spaces and premium amenities.",
     fullDescription:
-      "A contemporary, sustainable community in Kumasi integrating green spaces, premium amenities and renewable energy. The project embodies our sustainable communities pillar - parks, playgrounds, and energy-efficient design tailored to Ghana's cultural and social dynamics while ensuring functionality, comfort and affordability.",
+      "A contemporary, sustainable community in Kumasi integrating green spaces and premium amenities and plumbing. The project embodies our sustainable communities pillar - parks, playgrounds, and energy-efficient design tailored to Ghana's cultural and social dynamics while ensuring functionality, comfort and affordability.",
     client: "Nightingale Communities",
     duration: "20 months",
     scope: [
       "Sustainable Community Design",
       "Green Spaces & Parks",
-      "Renewable Energy Integration",
+      "Plumbing Integration",
       "Premium Amenities",
       "Culturally Tailored Planning",
     ],
@@ -292,7 +274,7 @@ export const PROJECTS: ProjectItem[] = [
     description:
       "Portfolio of frameless glass solutions - partitions, balustrades, facades and shower enclosures for residential & commercial clients.",
     fullDescription:
-      "Comprehensive frameless glass portfolio demonstrating Nightingale Avenue Construction expertise: partitions for offices, shower enclosures, balustrades and railings, staircases and walkways, shopfronts and entrances, facades and curtain walls, pool fencing and glass canopies. Tempered & laminated safety glass with tinted & reflective solar control glazing for energy efficiency.",
+      "Comprehensive frameless glass portfolio demonstrating Nightingale Avenue Construction expertise: partitions for offices, shower enclosures, balustrades and railings, staircases and walkways, shopfronts and entrances, facades and curtain walls, pool fencing and glass canopies. Tempered & laminated safety glass with tinted & reflective glazing for energy efficiency.",
     client: "Multiple - Residential & Commercial",
     duration: "Ongoing",
     scope: [
@@ -300,7 +282,7 @@ export const PROJECTS: ProjectItem[] = [
       "Glass Partitions & Facades",
       "Balustrades & Shower Enclosures",
       "Tempered & Laminated Glass",
-      "Solar Control Glazing",
+      "Tinted Glazing",
     ],
     image: "/images/glass-frameless.jpg",
   },
@@ -367,7 +349,7 @@ export const TESTIMONIALS: TestimonialItem[] = [
     name: "Commercial Client",
     role: "Shopfront - Accra",
     review:
-      "The frameless glass and aluminium work by Nightingale Avenue Construction transformed our space. Clean, modern, and built to last — truly innovative glass solutions.",
+      "The frameless glass and aluminium work by Nightingale Avenue Construction transformed our space. Clean, modern, and built to last - truly innovative glass solutions.",
     rating: 5,
   },
   {
@@ -412,14 +394,14 @@ export const PROCESS_STEPS: ProcessStep[] = [
     number: "03",
     title: "Sourcing & Preparation",
     description:
-      "Strategic sourcing from vetted suppliers, detailed costing, scheduling, and permit approvals — with transparent procurement.",
+      "Strategic sourcing from vetted suppliers, detailed costing, scheduling, and permit approvals - with transparent procurement.",
     icon: Package,
   },
   {
     number: "04",
     title: "Construction / Installation",
     description:
-      "Skilled workforce executes with modern machinery, quality materials, and strict safety standards — whether building or glazing.",
+      "Skilled workforce executes with modern machinery, quality materials, and strict safety standards - whether building or glazing.",
     icon: Building2,
   },
   {
@@ -433,13 +415,13 @@ export const PROCESS_STEPS: ProcessStep[] = [
     number: "06",
     title: "Handover & Support",
     description:
-      "Final inspections, client walkthrough, documentation and logistics-backed aftercare — building lasting partnerships.",
+      "Final inspections, client walkthrough, documentation and logistics-backed aftercare - building lasting partnerships.",
     icon: Home,
   },
 ];
 
 export const STATS = [
-  { value: "2024", label: "Incorporated" },
+  { value: "2020", label: "Incorporated" },
   { value: "500+", label: "Housing Units Blueprint" },
   { value: "5", label: "Solution Pillars" },
   { value: "100%", label: "Ghanaian Owned" },
@@ -556,7 +538,7 @@ export const TEAM_MEMBERS = [
     bio: "BSc Biological Science. Executive and administrative support.",
     image: "/images/team-14.jpg",
     qualification: "BSc Biological Science",
-    experience: "—",
+    experience: "-",
   },
   {
     name: "Samuel Asante",
@@ -601,7 +583,7 @@ export const CORE_VALUES = [
   {
     title: "Sustainability",
     description:
-      "Embracing sustainable and innovative housing solutions with green spaces and renewable energy integration.",
+      "Embracing sustainable and innovative housing solutions with green spaces and quality amenities.",
   },
   {
     title: "Inclusivity",
@@ -621,7 +603,7 @@ export const CORE_VALUES = [
   {
     title: "Transparency & Reliability",
     description:
-      "End-to-end transparency, strict compliance, and reliable delivery — from procurement to handover.",
+      "End-to-end transparency, strict compliance, and reliable delivery - from procurement to handover.",
   },
 ];
 

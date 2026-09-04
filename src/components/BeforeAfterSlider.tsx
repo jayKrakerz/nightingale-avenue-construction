@@ -116,7 +116,7 @@ export default function BeforeAfterSlider({
         </div>
       </div>
 
-      {/* Bottom hint — visible on all sizes, smaller on mobile */}
+      {/* Bottom hint - visible on all sizes, smaller on mobile */}
       <div className="absolute bottom-3 md:bottom-4 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2 bg-charcoal/75 backdrop-blur text-white text-[11px] md:text-xs px-3 py-1.5 rounded-full border border-white/10">
         <span className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse" aria-hidden /> Drag to compare
       </div>
