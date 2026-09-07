@@ -3,10 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "bash scripts/move-stray-assets.sh; next dev",
+    "build": "bash scripts/move-stray-assets.sh; next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "cleanup": "bash scripts/move-stray-assets.sh"
   },
   "dependencies": {
     "framer-motion": "^11.15.0",

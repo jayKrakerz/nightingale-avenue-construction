@@ -1,9 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
-import { ArrowRight, ArrowUpRight, Quote, Building2, ShieldCheck, CheckCircle2 } from "lucide-react";
-import { COMPANY, TEAM_MEMBERS } from "@/lib/data";
+import { Quote, Building2, ShieldCheck, CheckCircle2 } from "lucide-react";
 
 const TIMELINE = [
   { year: "2020.03", k: "Foundation", t: "Wholly Ghanaian incorporation - 69 Mango Street, Blue Plaza, Baatsona Total, Spintex. Solutions company on paper, site crew on ground.", img: "/images/construction.jpg" },
@@ -65,7 +63,7 @@ export default function AboutPage() {
         <div className="max-w-[900px] mx-auto px-6 lg:px-8 py-12 md:py-16 text-center">
           <Quote size={18} className="mx-auto text-gold mb-4" aria-hidden />
           <p className="font-serif font-light text-charcoal text-[22px] md:text-[28px] leading-[1.3] tracking-tight">“We don&apos;t sell renders. We pour streets, fix drains, hang glass - and hand keys to the people who keep Ghana running.”</p>
-          <div className="mt-4 text-[12px]"><span className="font-bold text-charcoal">John Awua Kyerematen</span><span className="text-charcoal/40"> - Managing Director, 33 years • BSc, ACMA</span></div>
+          <div className="mt-4 text-[12px]"><span className="font-bold text-charcoal">Nightingale Avenue Construction</span><span className="text-charcoal/40"> — Management</span></div>
         </div>
       </section>
 
@@ -121,7 +119,7 @@ export default function AboutPage() {
                   <span className="bg-cream border border-charcoal/10 text-charcoal text-[11px] font-bold uppercase tracking-wide px-3 py-1.5 rounded-[4px]">Parks & Amenities</span>
                   <span className="bg-charcoal text-white text-[11px] font-bold uppercase tracking-wide px-3 py-1.5 rounded-[4px]">Cost-Controlled</span>
                 </div>
-                <p className="mt-4 text-[12px] leading-relaxed text-charcoal/50 border-l-2 border-gold/30 pl-3 italic">“We pour streets, fix drains, hang glass - and hand keys to the people who keep Ghana running.” - JAK, MD</p>
+                <p className="mt-4 text-[12px] leading-relaxed text-charcoal/50 border-l-2 border-gold/30 pl-3 italic">“We pour streets, fix drains, hang glass - and hand keys to the people who keep Ghana running.”</p>
               </div>
             </div>
             {/* Vision - 4col, image-backed, compact */}
@@ -164,49 +162,6 @@ export default function AboutPage() {
               </div>
             </div>
           ))}
-        </div>
-      </section>
-
-      {/* TEAM - featured MD large, rest 7 small */}
-      <section className="bg-cream border-y border-charcoal/5">
-        <div className="max-w-[1440px] mx-auto px-6 lg:px-8 py-12 md:py-16">
-          <div className="flex items-end justify-between gap-4">
-            <h2 className="font-serif font-light text-charcoal text-[28px] md:text-[32px] tracking-tight">Leadership</h2>
-            <Link href="/contact" className="hidden md:inline-flex items-center gap-1 text-gold text-xs font-bold uppercase tracking-wide">Work with us <ArrowUpRight size={12} /></Link>
-          </div>
-          {/* Featured */}
-          <div className="mt-6 grid lg:grid-cols-12 gap-6">
-            <div className="lg:col-span-5 bg-white border border-charcoal/10 p-6 flex gap-4">
-              <div className="w-20 h-24 bg-charcoal flex items-center justify-center shrink-0"><span className="font-archivo font-extrabold text-gold text-xs">JAK</span></div>
-              <div>
-                <h3 className="font-serif font-medium text-charcoal text-[16px]">{TEAM_MEMBERS[0].name}</h3>
-                <p className="text-gold text-[11px] font-bold uppercase tracking-wide">{TEAM_MEMBERS[0].position} • {TEAM_MEMBERS[0].experience}</p>
-                <p className="text-charcoal/60 text-[12px] leading-relaxed mt-2">{TEAM_MEMBERS[0].bio}</p>
-                <p className="text-charcoal/40 text-[11px] mt-1">{TEAM_MEMBERS[0].qualification}</p>
-              </div>
-            </div>
-            <div className="lg:col-span-7 grid sm:grid-cols-3 gap-3">
-              {TEAM_MEMBERS.slice(1, 7).map((m) => (
-                <div key={m.name} className="bg-white border border-charcoal/10 p-4">
-                  <div className="font-serif font-medium text-charcoal text-[13px] leading-tight">{m.name}</div>
-                  <div className="text-gold text-[10px] font-bold uppercase tracking-wide mt-1">{m.position}</div>
-                  <div className="text-charcoal/40 text-[10px] mt-1">{m.experience}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-          <details className="mt-6 group">
-            <summary className="list-none inline-flex items-center gap-2 text-charcoal font-bold text-[11px] tracking-[0.06em] uppercase border border-charcoal/10 rounded-[4px] px-3 py-2 bg-white cursor-pointer"><span className="w-2 h-2 bg-gold rounded-[2px] group-open:rotate-45 transition-transform" aria-hidden /> Show all {TEAM_MEMBERS.length}</summary>
-            <div className="mt-4 grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
-              {TEAM_MEMBERS.slice(7).map((m) => (
-                <div key={m.name} className="bg-white border border-charcoal/10 p-3">
-                  <div className="font-serif font-medium text-charcoal text-[12px]">{m.name}</div>
-                  <div className="text-gold text-[10px] font-bold uppercase">{m.position}</div>
-                  <div className="text-charcoal/40 text-[10px]">{m.experience} • {m.qualification}</div>
-                </div>
-              ))}
-            </div>
-          </details>
         </div>
       </section>
 

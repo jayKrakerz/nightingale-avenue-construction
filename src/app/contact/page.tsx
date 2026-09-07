@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { Phone, Mail, MapPin, Clock, MessageCircle } from "lucide-react";
 import ContactForm from "@/components/ContactForm";
+import ContactMap from "@/components/ContactMap";
 import { DotGrid, BlueprintCorner, GrainOverlay, TopoLines } from "@/components/SectionTexture";
 import { COMPANY } from "@/lib/data";
 
@@ -75,12 +76,8 @@ export default function ContactPage() {
                 </div>
               </motion.div>
 
-              <motion.div initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-60px" }} transition={{ duration: 0.5, delay: 0.08, ease: [0.22, 1, 0.36, 1] }} className="bg-cream rounded-[20px] overflow-hidden border border-charcoal/5 shadow-soft relative h-[320px]">
-                <Image src="/images/contact-accra.jpg" alt="Spintex area map" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 480px" />
-                <div className="absolute inset-0 bg-charcoal/10" aria-hidden />
-                <div className="absolute bottom-4 left-4 bg-white rounded-full px-4 py-2 text-xs font-semibold text-charcoal shadow-soft flex items-center gap-2 border border-charcoal/5">
-                  <MapPin size={12} className="text-gold" aria-hidden /> Spintex • Baatsona
-                </div>
+              <motion.div initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-60px" }} transition={{ duration: 0.5, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}>
+                <ContactMap heightClass="h-[320px]" />
               </motion.div>
             </div>
           </div>

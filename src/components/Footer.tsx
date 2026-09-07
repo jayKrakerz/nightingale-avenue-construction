@@ -13,14 +13,8 @@ export default function Footer() {
         {/* Top */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 pb-12 border-b border-white/5">
           <div className="lg:col-span-5">
-            <Link href="/" className="flex items-center gap-3.5 mb-5">
-              <div className="w-11 h-11 rounded-xl bg-white flex items-center justify-center overflow-hidden">
-                <Image src="/logo.jpeg" alt="Nightingale Avenue Construction Logo" width={44} height={44} className="object-contain p-1" />
-              </div>
-              <div>
-                <span className="font-archivo font-extrabold text-white text-[16px] tracking-[-0.01em] uppercase leading-none block">Nightingale Avenue</span>
-                <span className="text-gold text-[10px] tracking-[0.14em] uppercase font-bold">Construction - NAC</span>
-              </div>
+            <Link href="/" className="flex items-center mb-5">
+              <Image src="/logo-light.png" alt="NAC - Nightingale Avenue Construction Logo" width={200} height={67} className="h-14 w-auto object-contain" />
             </Link>
             <p className="text-sm leading-relaxed text-white/70 max-w-md mb-6 font-medium">
               Wholly owned Ghanaian solutions provider since Mar 2020. Construction & affordable housing, glass innovation, procurement & logistics, plumbing.

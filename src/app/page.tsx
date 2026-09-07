@@ -21,6 +21,7 @@ import StatsSection from "@/components/StatsSection";
 import ProcessSection from "@/components/ProcessSection";
 import CTASection from "@/components/CTASection";
 import ContactForm from "@/components/ContactForm";
+import ContactMap from "@/components/ContactMap";
 import { TrustMarquee } from "@/components/Marquee";
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 import AxialHero from "@/components/AxialHero";
@@ -55,7 +56,7 @@ export default function Home() {
               <div className="mt-5 space-y-3.5 text-[14px] leading-[1.65] text-charcoal/70 font-medium max-w-prose">
                 <p><strong className="text-charcoal font-bold">{COMPANY.fullName}</strong> - wholly owned Ghanaian, incorporated <strong className="text-charcoal font-bold">{COMPANY.incorporated}</strong>. Real estate & civil engineering, built on site.</p>
                 <p>Social housing blueprint for nurses, doctors, teachers and security personnel - solid communities, hard costs controlled, no render promises.</p>
-                <p className="text-charcoal font-semibold text-[13px] tracking-wide">FRAMLESS & ALUMINIUM GLASS • PPA-REGISTERED PROCUREMENT • PLUMBING • ELECTRICAL • CCTV</p>
+                <p className="text-charcoal font-semibold text-[13px] tracking-wide">GLASS • PROCUREMENT • PLUMBING • ELECTRICAL • WATER • CARPENTRY • TREE CUTTING • RUBBISH & RECYCLING • CCTV</p>
               </div>
               {/* Spec strip - not pills */}
               <div className="mt-6 grid grid-cols-2 border border-charcoal/10 rounded-[6px] overflow-hidden bg-white">
@@ -108,8 +109,8 @@ export default function Home() {
         <div className="relative max-w-[1440px] mx-auto">
           <SectionHeading
             tag="Our Solutions"
-            title="Five pillars. One trusted partner."
-            description="Construction, glass innovation, procurement & logistics, plumbing - delivering value from sourcing to handover."
+            title="Ten pillars. One trusted partner."
+            description="Construction, glass innovation, procurement & logistics, plumbing, electrical, water, carpentry, tree cutting and rubbish & recycling - delivering value from sourcing to handover."
           />
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {SERVICES.map((s, i) => (
@@ -252,13 +253,7 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <div className="rounded-[20px] overflow-hidden border border-charcoal/5 h-[280px] relative bg-cream">
-                <Image src="/images/contact-accra.jpg" alt="Spintex area map placeholder" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 480px" />
-                <div className="absolute inset-0 bg-charcoal/15" />
-                <div className="absolute bottom-4 left-4 bg-white rounded-full px-4 py-2 text-xs font-semibold text-charcoal shadow-soft flex items-center gap-2">
-                  <MapPin size={12} className="text-gold" aria-hidden /> Spintex • Baatsona
-                </div>
-              </div>
+              <ContactMap heightClass="h-[280px]" />
             </div>
           </div>
         </div>

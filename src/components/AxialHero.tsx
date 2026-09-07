@@ -89,18 +89,18 @@ export default function AxialHero() {
               <div className="relative overflow-hidden rounded-[6px] bg-white border border-charcoal/10 p-5 flex gap-4">
                 <div className="absolute top-0 left-0 w-full h-1 bg-gold" aria-hidden />
                 <div className="flex-1 min-w-0 pt-1">
-                  <div className="text-[10px] font-bold tracking-[0.12em] uppercase text-charcoal/40">Featured - Accra</div>
-                  <h3 className="font-serif font-medium text-charcoal text-[15px] leading-tight mt-1">Affordable Housing</h3>
+                  <div className="inline-flex items-center gap-1.5 text-[10px] font-bold tracking-[0.12em] uppercase text-gold"><span className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse" aria-hidden /> Site Works — Accra</div>
+                  <h3 className="font-serif font-medium text-charcoal text-[15px] leading-tight mt-1">500-Unit Housing <span className="text-charcoal/40 font-normal">Programme</span></h3>
                   <div className="font-archivo font-extrabold text-charcoal text-[28px] leading-none mt-2">
-                    500 <span className="text-[12px] font-bold tracking-wide text-gold">UNITS</span>
+                    500 <span className="text-[11px] font-bold tracking-[0.14em] uppercase text-gold">Housing Units</span>
                   </div>
-                  <div className="text-charcoal/50 text-xs font-semibold mt-1 tracking-wide">DESIGN & BUILD • PARKS & AMENITIES</div>
+                  <div className="text-charcoal/50 text-[10px] font-bold tracking-[0.08em] uppercase mt-1">Housing • Glass • Electrical • Plumbing</div>
                   <Link href="/projects" className="inline-flex items-center gap-1.5 mt-4 bg-charcoal text-white text-[11px] font-bold tracking-[0.06em] uppercase px-3.5 py-2 rounded-[4px] hover:bg-charcoal-dark transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold">
-                    Details <ArrowRight size={11} aria-hidden />
+                    Build Progress <ArrowRight size={11} aria-hidden />
                   </Link>
                 </div>
                 <div className="w-[110px] shrink-0 relative overflow-hidden rounded-[4px] bg-cream border border-charcoal/5 aspect-[4/3]">
-                  <Image src="/images/featured-estate.jpg" alt="Featured affordable housing estate" fill className="object-cover grayscale-[0.1]" sizes="110px" />
+                  <Image src="/images/construction.jpg" alt="Site works — roads and drainage under construction" fill className="object-cover grayscale-[0.1]" sizes="110px" />
                 </div>
               </div>
             </motion.div>

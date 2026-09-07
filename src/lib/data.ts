@@ -16,6 +16,11 @@ import {
   Monitor,
   GlassWater,
   Package,
+  Zap,
+  Droplets,
+  Hammer,
+  Trees,
+  Recycle,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
@@ -74,13 +79,13 @@ export const SERVICES: ServiceItem[] = [
     shortDescription:
       "Full-scope building - renovation, plumbing, painting, electrical, CCTV, plastering and BOQ-driven delivery.",
     description:
-      "Nightingale Avenue Construction is recognized for excellence in real estate and civil engineering. Incorporated in March 2020, we deliver quality, affordable housing and complete building services - renovation, plumbing, painting, plastering, electrical, CCTV & security, architectural plans and BOQ. From contemporary communities to roads and drainage, we deliver end-to-end with Ghanaian craftsmanship.",
+      "Nightingale Avenue Construction is recognized for excellence in real estate and civil engineering. Incorporated in March 2020, we deliver quality, affordable housing and complete building services - renovation, plumbing, painting, plastering, electrical, CCTV & security, architectural plans and BOQ. From contemporary communities to finishing and glass, we deliver end-to-end with Ghanaian craftsmanship.",
     features: [
       "Affordable housing - 500 units blueprint in Accra",
       "Renovation, plumbing, painting, plastering - full refurbishment",
       "Electrical, CCTV & security systems installation",
       "Architectural plans & BOQ preparation",
-      "Roads, drainage & infrastructure for new residential areas",
+      "Water, carpentry, tree cutting & rubbish services integrated",
       "Design & Build - end-to-end project delivery",
     ],
     image: "/images/construction.jpg",
@@ -124,7 +129,7 @@ export const SERVICES: ServiceItem[] = [
       "Composite panel (ACP) installation",
       "Curtain wall & shopfront systems",
     ],
-    image: "/images/glass-aluminium.jpg",
+    image: "/images/alu-glass.png",
   },
   {
     icon: Truck,
@@ -162,7 +167,97 @@ export const SERVICES: ServiceItem[] = [
       "Drainage, septic & sewage solutions",
       "Emergency plumbing & maintenance",
     ],
-    image: "/images/construction.jpg",
+    image: "/images/plumbing.jpg",
+  },
+  {
+    icon: Zap,
+    title: "Electrical Services",
+    slug: "electrical",
+    shortDescription:
+      "Licensed electricians for wiring, installations, repairs and safety compliance for homes and businesses.",
+    description:
+      "Certified electrical services covering new installations, rewiring, fault finding, lighting, power distribution and safety inspections. We deliver compliant, energy-efficient electrical systems for residential, commercial and industrial projects - from single-unit repairs to full building electrification.",
+    features: [
+      "House wiring & rewiring - new builds & renovations",
+      "Lighting installation - indoor, outdoor & security lighting",
+      "Socket, switch & distribution board installation",
+      "Electrical fault finding, repairs & maintenance",
+      "CCTV, security systems & smart home wiring",
+      "Electrical testing, certification & safety compliance",
+    ],
+    image: "/images/electrical.jpg",
+  },
+  {
+    icon: Droplets,
+    title: "Water Services",
+    slug: "water-services",
+    shortDescription:
+      "Clean water supply - boreholes, storage, pumping and treatment for reliable access.",
+    description:
+      "End-to-end water solutions ensuring reliable, clean water for homes, estates and commercial sites. From borehole drilling and mechanization to storage tanks, pumping systems, filtration and maintenance - we deliver sustainable water access integrated with plumbing and construction.",
+    features: [
+      "Borehole drilling & mechanization",
+      "Water storage tanks & pumping systems",
+      "Water treatment & filtration installation",
+      "Overhead & underground water supply networks",
+      "Water pressure boosting & distribution",
+      "Maintenance, servicing & emergency water support",
+    ],
+    image: "/images/water-services.png",
+  },
+  {
+    icon: Hammer,
+    title: "Carpentry Services",
+    slug: "carpentry",
+    shortDescription:
+      "Skilled carpentry - roofing, doors, kitchens, wardrobes and bespoke woodwork.",
+    description:
+      "Expert carpentry and joinery for construction and finishing - from structural roofing and formwork to bespoke kitchens, wardrobes, doors and furniture. Precision craftsmanship with quality timber and modern finishing for durable, beautiful results.",
+    features: [
+      "Roofing carpentry - trusses, formwork & framing",
+      "Doors, windows & frames - supply & installation",
+      "Kitchen cabinets, wardrobes & fitted furniture",
+      "Ceiling, partitioning & wooden flooring",
+      "Bespoke furniture & shelving - custom joinery",
+      "Repairs, polishing & wood finishing",
+    ],
+    image: "/images/carpentary.png",
+  },
+  {
+    icon: Trees,
+    title: "Tree Cutting Services",
+    slug: "tree-cutting",
+    shortDescription:
+      "Professional tree felling, pruning, stump removal and site clearance - safe and efficient.",
+    description:
+      "Safe, professional tree services for residential, commercial and construction sites. Whether clearing land for development, pruning overgrowth or removing hazardous trees, our trained crew uses proper equipment and safety standards to get the job done cleanly and responsibly.",
+    features: [
+      "Tree felling & complete removal",
+      "Pruning, trimming & crown reduction",
+      "Stump grinding & root removal",
+      "Site clearance for construction & landscaping",
+      "Hedge trimming & vegetation control",
+      "Waste collection & responsible disposal after cutting",
+    ],
+    image: "/images/tree-cut.png",
+  },
+  {
+    icon: Recycle,
+    title: "Rubbish & Recycling",
+    slug: "rubbish-recycling",
+    shortDescription:
+      "Waste collection, rubbish removal and recycling - keeping sites and communities clean.",
+    description:
+      "Reliable rubbish removal and recycling services for construction sites, homes, offices and estates. We handle collection, sorting, disposal and recycling with compliance and sustainability in mind - leaving sites clean, safe and environmentally responsible.",
+    features: [
+      "Construction & demolition waste removal",
+      "Household & commercial rubbish collection",
+      "Waste sorting & recycling services",
+      "Skip hire & scheduled waste pickup",
+      "Estate & community cleaning services",
+      "Eco-friendly disposal & compliance with local regulations",
+    ],
+    image: "/images/recycling.png",
   },
 ];
 
@@ -242,7 +337,7 @@ export const PROJECTS: ProjectItem[] = [
       "Community Needs Assessment",
       "Stakeholder Collaboration",
     ],
-    image: "/images/construction.jpg",
+    image: "/images/housing-renovation.jpg",
   },
   {
     id: "infrastructure-residential-area",
@@ -263,7 +358,7 @@ export const PROJECTS: ProjectItem[] = [
       "Civil Engineering Works",
       "Project Management & QA",
     ],
-    image: "/images/construction.jpg",
+    image: "/images/infrastructure.jpg",
   },
   {
     id: "glass-frameless-portfolio",
@@ -423,19 +518,11 @@ export const PROCESS_STEPS: ProcessStep[] = [
 export const STATS = [
   { value: "2020", label: "Incorporated" },
   { value: "500+", label: "Housing Units Blueprint" },
-  { value: "5", label: "Solution Pillars" },
+  { value: "10", label: "Solution Pillars" },
   { value: "100%", label: "Ghanaian Owned" },
 ];
 
 export const TEAM_MEMBERS = [
-  {
-    name: "John Awua Kyerematen",
-    position: "Managing Director",
-    bio: "33 years experience. BSc, ACMA II Management & Business. Leads overall strategy and company leadership.",
-    image: "/images/team-1.jpg",
-    qualification: "BSc, ACMA II Management & Business",
-    experience: "33 years",
-  },
   {
     name: "Wilson Akaho Tay",
     position: "Project Manager",

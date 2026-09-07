@@ -58,16 +58,15 @@ export default function Navbar() {
         className={`fixed top-0 left-0 right-0 z-50 border-b transition-all duration-300 ${scrolled ? "border-charcoal/5 py-3" : "border-transparent py-5"}`}
       >
         <nav className="max-w-[1440px] mx-auto px-6 lg:px-8 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-3.5 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded-xl">
-            <div
-              className={`relative w-11 h-11 rounded-xl overflow-hidden flex items-center justify-center transition-colors duration-300 border ${scrolled ? "bg-white border-charcoal/5 shadow-soft" : "bg-white border-white/15 shadow-soft"}`}
-            >
-              <Image src="/logo.jpeg" alt="Nightingale Avenue Construction Logo" width={44} height={44} className="object-contain p-1.5" priority />
-            </div>
-            <div className="hidden sm:block">
-              <span className={`font-archivo font-extrabold text-[15px] tracking-[-0.01em] leading-none uppercase block transition-colors ${scrolled ? "text-charcoal" : "text-white"}`}>Nightingale Avenue</span>
-              <span className={`text-[10px] font-bold tracking-[0.14em] uppercase transition-colors ${scrolled ? "text-charcoal/70" : "text-white/70"}`}>Limited - NAC</span>
-            </div>
+          <Link href="/" className="flex items-center group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded-xl">
+            <Image
+              src={scrolled ? "/logo.png" : "/logo-light.png"}
+              alt="NAC - Nightingale Avenue Construction Logo"
+              width={200}
+              height={67}
+              className="h-10 md:h-14 w-auto object-contain drop-shadow-[0_1px_8px_rgba(0,0,0,0.12)]"
+              priority
+            />
           </Link>
 
           <div className="hidden lg:flex items-center gap-1">
