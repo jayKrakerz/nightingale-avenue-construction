@@ -54,17 +54,21 @@ export default function Navbar() {
       <motion.div className="fixed top-0 left-0 right-0 h-px bg-gold z-[62] origin-left pointer-events-none" style={{ scaleX: progressScale }} />
       <div className="fixed top-px left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent z-[61] pointer-events-none" />
       <motion.header
-        style={{ backgroundColor: headerBg as unknown as string, backdropFilter: headerBlur as unknown as string, WebkitBackdropFilter: headerBlur as unknown as string, boxShadow: headerShadow as unknown as string } as unknown as React.CSSProperties}
-        className={`fixed top-0 left-0 right-0 z-50 border-b transition-all duration-300 ${scrolled ? "border-charcoal/5 py-3" : "border-transparent py-5"}`}
+        style={
+          isOpen
+            ? ({ backgroundColor: "rgba(255,255,255,0.98)", backdropFilter: "blur(16px)", WebkitBackdropFilter: "blur(16px)", boxShadow: "0 8px 32px rgba(0,0,0,0.06)" } as React.CSSProperties)
+            : ({ backgroundColor: headerBg as unknown as string, backdropFilter: headerBlur as unknown as string, WebkitBackdropFilter: headerBlur as unknown as string, boxShadow: headerShadow as unknown as string } as unknown as React.CSSProperties)
+        }
+        className={`fixed top-0 left-0 right-0 z-50 border-b transition-all duration-300 ${isOpen || scrolled ? "border-charcoal/5 py-3" : "border-transparent py-5"}`}
       >
         <nav className="max-w-[1440px] mx-auto px-6 lg:px-8 flex items-center justify-between">
           <Link href="/" className="flex items-center group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded-xl">
             <Image
-              src={scrolled ? "/logo.png" : "/logo-light.png"}
+              src={isOpen || scrolled ? "/logo.png" : "/logo-light.png"}
               alt="NAC - Nightingale Avenue Construction Logo"
               width={200}
               height={67}
-              className="h-10 md:h-14 w-auto object-contain drop-shadow-[0_1px_8px_rgba(0,0,0,0.12)]"
+              className="h-12 md:h-14 w-auto object-contain drop-shadow-[0_1px_8px_rgba(0,0,0,0.12)]"
               priority
             />
           </Link>
@@ -102,7 +106,7 @@ export default function Navbar() {
             aria-expanded={isOpen}
             aria-controls="mobile-nav"
             aria-label={isOpen ? "Close menu" : "Open menu"}
-            className={`lg:hidden w-10 h-10 rounded-full flex items-center justify-center transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold shadow-soft ${scrolled ? "bg-charcoal text-white" : "bg-white text-charcoal"}`}
+            className={`lg:hidden w-10 h-10 rounded-full flex items-center justify-center transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold shadow-soft ${isOpen || scrolled ? "bg-charcoal text-white" : "bg-white text-charcoal"}`}
           >
             {isOpen ? <X size={18} /> : <Menu size={18} />}
           </button>
@@ -116,7 +120,7 @@ export default function Navbar() {
         className={`lg:hidden fixed inset-0 z-40 bg-cream transition-opacity duration-300 ${isOpen ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"}`}
         style={{ paddingTop: "64px" }}
       >
-        <div className="h-[100dvh] overflow-y-auto overscroll-contain flex flex-col px-6 pt-6 pb-8">
+        <div className="h-[100dvh] overflow-y-auto overscroll-contain flex flex-col px-6 pt-6 pb-10" style={{ paddingBottom: "calc(2.5rem + env(safe-area-inset-bottom, 0px))" }}>
           <div className="flex-1">
             <nav className="flex flex-col mt-2" aria-label="Mobile navigation">
               {NAV_LINKS.map((link, i) => {
@@ -137,7 +141,7 @@ export default function Navbar() {
               })}
             </nav>
           </div>
-          <div className="space-y-3 mt-8">
+          <div className="space-y-3 mt-8 pb-6">
             <a href={`tel:${COMPANY.phone}`} className="bg-white rounded-2xl p-4 border border-charcoal/5 flex items-center gap-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold">
               <span className="w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center text-gold shrink-0">
                 <Phone size={18} aria-hidden />
