@@ -56,6 +56,10 @@ export const metadata: Metadata = {
     siteName: "Nightingale Avenue Construction",
   },
   robots: { index: true, follow: true },
+  icons: {
+    icon: [{ url: "/favicon.ico" }, { url: "/favicon-512.png", sizes: "512x512", type: "image/png" }],
+    apple: [{ url: "/favicon-512.png", sizes: "512x512", type: "image/png" }],
+  },
 };
 
 export default function RootLayout({

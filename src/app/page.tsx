@@ -24,6 +24,8 @@ import ContactForm from "@/components/ContactForm";
 import ContactMap from "@/components/ContactMap";
 import { TrustMarquee } from "@/components/Marquee";
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
+import BlueprintReveal from "@/components/BlueprintReveal";
+import Hotspots from "@/components/Hotspots";
 import AxialHero from "@/components/AxialHero";
 import FAQAccordion from "@/components/FAQAccordion";
 import { DotGrid, BlueprintCorner, ArchLines, WaveLines, TopoLines, GrainOverlay } from "@/components/SectionTexture";
@@ -196,7 +198,47 @@ export default function Home() {
               <p className="text-sm text-charcoal/70 mt-1">From bare ground to paved walkway - durable, drainage-ready finishing.</p>
             </div>
           </div>
-          <p className="text-center text-xs text-charcoal/30 mt-6 tracking-wide">Tip: Drag the handle or use ← → keys. Focus the slider and try.</p>
+          <div className="text-center mt-8">
+            <Link href="/before-after" className="inline-flex items-center gap-2 bg-charcoal text-white px-7 py-3.5 rounded-full text-sm font-semibold hover:bg-charcoal-dark transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold">
+              View All Before & After <ArrowRight size={14} aria-hidden />
+            </Link>
+          </div>
+          <p className="text-center text-xs text-charcoal/30 mt-4 tracking-wide">Tip: Drag the handle or use ← → keys. Focus the slider and try.</p>
+        </div>
+      </section>
+
+      {/* Blueprint → Built + Hotspots teaser */}
+      <section className="section-padding bg-cream relative overflow-hidden border-t border-charcoal/5">
+        <DotGrid opacity={0.025} />
+        <div className="absolute top-0 inset-x-0 h-px bg-charcoal/5" aria-hidden />
+        <div className="relative max-w-[1440px] mx-auto">
+          <SectionHeading tag="New Interactions" title="Blueprint to built. Tap to explore." description="Two more scrub patterns — same drag DNA you liked. Full gallery on /before-after." />
+          <div className="grid lg:grid-cols-2 gap-6 md:gap-8">
+            <div>
+              <BlueprintReveal builtSrc="/images/featured-estate.jpg" heightClass="h-[360px] sm:h-[400px] md:h-[440px]" />
+              <p className="text-sm text-charcoal/60 mt-3">Blueprint → Built — drag to reveal. Plan paper vs. finished estate.</p>
+            </div>
+            <div>
+              <Hotspots
+                imageSrc="/images/hotspots-house.png"
+                imageAlt="Modern house at dusk - hotspots"
+                heightClass="h-[360px] sm:h-[400px] md:h-[440px]"
+                hotspots={[
+                  { id: "glass", x: 27, y: 33, title: "Frameless Glass", description: "Balcony + staircase glazing — tempered, frameless.", tag: "Glass Solutions", href: "/services" },
+                  { id: "aluminium", x: 78, y: 28, title: "Aluminium Systems", description: "Window & door frames — durable, colour-matched.", tag: "Aluminium", href: "/services" },
+                  { id: "carpentry", x: 32, y: 20, title: "Carpentry", description: "Timber soffits, decking, slats — joinery.", tag: "Carpentry", href: "/services" },
+                  { id: "plumbing", x: 30, y: 83, title: "Plumbing & Water", description: "Drainage & water tanks — exposed cross-section.", tag: "Plumbing • Water", href: "/services" },
+                  { id: "electrical", x: 92, y: 45, title: "Electrical & CCTV", description: "CCTV, lighting, EV charger — certified.", tag: "Electrical", href: "/services" },
+                ]}
+              />
+              <p className="text-sm text-charcoal/60 mt-3">Hotspots — 5 pillars, pinned to your new house image.</p>
+            </div>
+          </div>
+          <div className="text-center mt-8">
+            <Link href="/before-after" className="inline-flex items-center gap-2 bg-white border border-charcoal/10 text-charcoal px-7 py-3.5 rounded-full text-sm font-semibold hover:bg-charcoal hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold">
+              Explore full interactive gallery <ArrowRight size={14} aria-hidden />
+            </Link>
+          </div>
         </div>
       </section>
 
